@@ -13,7 +13,8 @@ export default function Hero({ setIsOpen }) {
     <p style={{'fontFamily': "'Cormorant Garamond',Georgia,serif", 'fontSize': '24px', 'margin': '0 0 14px', 'fontStyle': 'italic', 'fontWeight': '400', 'color': 'var(--ink-soft)'}}>The iconic life — in Lord Krishna's homeland.</p>
     <p style={{'fontSize': '13px', 'margin': '0 0 48px', 'letterSpacing': '4px', 'textTransform': 'uppercase', 'color': 'var(--ink-mute)', 'fontWeight': '500'}}>Freehold Residential Plots &nbsp;·&nbsp; Customizable Sizes &nbsp;·&nbsp; 80% Open Spaces</p>
     <div className="cta-row">
-      <button onClick={() => setIsOpen(true)} className="btn-cta btn-whatsapp"><span className="ico">✆</span> Get Brochure</button>
+      <a href="https://wa.me/919718344024?text=Hi%20I%20am%20interested%20in%20Hero%20Homes%20Plots%20in%20Vrindavan" target="_blank" rel="noopener noreferrer" className="btn-cta btn-whatsapp"><span className="ico">✆</span> WHATSAPP</a>
+      <button onClick={() => setIsOpen(true)} className="btn-cta btn-red"><span className="ico">📥</span> Get Brochure</button>
       <button onClick={() => setIsOpen(true)} className="btn-cta btn-outline"><span className="ico">▶</span> 360° Video Tour</button>
       <button onClick={() => setIsOpen(true)} className="btn-cta btn-red"><span className="ico">▦</span> Master Plan</button>
     </div>
