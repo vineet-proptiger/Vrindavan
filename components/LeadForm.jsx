@@ -100,8 +100,8 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
       </div>
 
       <button type="submit" disabled={loading}
-        className="btn-gold mt-3 w-[85%] mx-auto flex justify-center items-center gap-2"
-        style={{ padding: '11px 24px' }}>
+        className={`${formName === 'Popup Modal' ? 'bg-[#c8102e] hover:bg-[#a50d26] text-white rounded font-bold uppercase tracking-wide' : 'btn-gold'} mt-3 w-[85%] mx-auto flex justify-center items-center gap-2`}
+        style={{ padding: '11px 24px', fontFamily: F_JOST }}>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
         </svg>
