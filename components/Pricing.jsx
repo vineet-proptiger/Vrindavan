@@ -6,37 +6,37 @@ const PRIMARY = "var(--color-primary, #3A2A0E)";
 
 const units = [
   {
-    type: "2 BHK",
-    size: "700 - 840 SqFt",
-    price: "85 Lakhs*",
+    type: "Cozy Villa",
+    size: "On Request",
+    price: "1.10 Cr*",
     oldPrice: null,
     btnText: "Get Details",
     features: [
-      "Exclusive 2 BHK Design",
+      "Exclusive Cozy Villa Design",
       "Premium Specifications",
       "Luxury Finishes",
     ],
   },
   {
-    type: "3 BHK",
-    size: "1000 - 1200 SqFt",
+    type: "Spacious Bungalow",
+    size: "On Request",
     price: "Price on Request",
     oldPrice: null,
     btnText: "Get Details",
     features: [
-      "Exclusive 3 BHK Design",
+      "Exclusive Spacious Bungalow Design",
       "Premium Specifications",
       "Luxury Finishes",
     ],
   },
   {
-    type: "4 BHK",
-    size: "1635 SqFt",
+    type: "Duplex Villa",
+    size: "On Request",
     price: "Price on Request",
     oldPrice: null,
     btnText: "Get Details",
     features: [
-      "Exclusive 4 BHK Design",
+      "Exclusive Duplex Villa Design",
       "Premium Specifications",
       "Luxury Finishes",
     ],
@@ -99,13 +99,13 @@ const Pricing = ({ setIsOpen }) => {
                   {/* Title & Size */}
                   <h3
                     data-aos={idx % 2 === 0 ? "flip-left" : "flip-right"} data-aos-delay="500"
-                    className="text-2xl font-bold mb-2"
-                    style={{ fontFamily: F_SANS, color: "#000000", letterSpacing: "0.02em" }}
+                    className="font-bold mb-2 whitespace-nowrap"
+                    style={{ fontFamily: F_SANS, fontSize: "clamp(17px, 1.6vw, 24px)", color: "#000000", letterSpacing: "0.01em" }}
                   >
                     {unit.type}
                   </h3>
                   <div className="flex items-center gap-2 mb-6">
-                    <span className="text-gray-400 text-xs uppercase tracking-wider font-semibold" style={{ fontFamily: F_SANS }}>Carpet Area:</span>
+                    <span className="text-gray-400 text-xs uppercase tracking-wider font-semibold" style={{ fontFamily: F_SANS }}>Size:</span>
                     <p className="text-sm font-semibold" style={{ fontFamily: F_SANS, color: PRIMARY }}>
                       {unit.size}
                     </p>

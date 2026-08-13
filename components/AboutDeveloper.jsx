@@ -185,14 +185,14 @@ const AboutDeveloper = ({ setIsOpen }) => (
           textTransform: 'uppercase', margin: 0,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>
-          About the Developer
+          Need Assistance?
         </h2>
       </div>
 
       {/* Two Column Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch max-w-6xl mx-auto">
 
-        {/* Left — Developer Info Card */}
+        {/* Left — Info Card */}
         <div style={{
           background: '#fff',
           display: 'flex', flexDirection: 'column', height: '100%',
@@ -216,17 +216,17 @@ const AboutDeveloper = ({ setIsOpen }) => (
                 background: 'rgba(255,255,255,0.1)',
                 border: '1px solid rgba(255,255,255,0.15)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontSize: '20px'
               }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                  <polyline points="9 22 9 12 15 12 15 22" />
-                </svg>
+                💬
               </div>
               <div>
-                <h3 style={{ fontFamily: F_JOST, fontWeight: '800', fontSize: '18px', color: '#fff', margin: '0 0 4px', letterSpacing: '-0.01em' }}>
-                  Mahindra Lifespaces
+                <h3 style={{ fontFamily: F_JOST, fontWeight: '800', fontSize: '18px', color: '#fff', margin: '0 0 2px', letterSpacing: '-0.01em' }}>
+                  Still Have Questions?
                 </h3>
-
+                <p style={{ fontFamily: F_JOST, fontWeight: '500', fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0 }}>
+                  Let's Talk.
+                </p>
               </div>
             </div>
           </div>
@@ -234,35 +234,39 @@ const AboutDeveloper = ({ setIsOpen }) => (
           {/* White Body */}
           <div style={{ padding: '24px 28px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
-              <p style={{ color: '#555', fontFamily: F_SANS, lineHeight: 1.85, fontSize: '14px', margin: '0 0 14px', textAlign: 'justify' }}>
-                <TypewriterText text="A part of the prestigious Mahindra Group of Companies, Mahindra Lifespaces is a real estate firm that builds quality residences, industrial complexes, & even integrated cities. With a presence in 9 cities across India, the company has coupled its innovative technology with sustainable practices to deliver 43 residential projects." />
+              <p style={{ color: '#555', fontFamily: F_SANS, lineHeight: 1.6, fontSize: '15px', margin: '0 0 24px', textAlign: 'left' }}>
+                Tell us what you're looking for — plot, villa, investment or retirement home. We'll match you to the right project and arrange a free site visit.
               </p>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '24px' }}>
+                {[
+                  { title: '100% MVDA Approved', desc: 'Every project. Zero legal risk.', icon: '✅' },
+                  { title: 'Free Pickup for Site Visit', desc: 'We arrange transport from your hotel/location.', icon: '🚗' },
+                  { title: 'Callback in 30 Minutes', desc: 'Our expert calls you — no waiting around.', icon: '📞' },
+                  { title: 'Zero Obligation', desc: 'No pressure. No hidden charges.', icon: '🔒' },
+                ].map((item, i) => (
+                  <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                    <div style={{ 
+                      width: '32px', height: '32px', borderRadius: '6px', background: 'var(--color-bg-muted)', 
+                      display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                      border: '1px solid var(--color-gold-light)', fontSize: '16px'
+                    }}>
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 style={{ fontFamily: F_JOST, fontWeight: '700', fontSize: '15px', color: '#3A2A0E', margin: '0 0 2px' }}>{item.title}</h4>
+                      <p style={{ fontFamily: F_SANS, fontSize: '13px', color: '#666', margin: 0, lineHeight: 1.4 }}>{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-
-            {/* Stats */}
-            {/* <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', marginBottom: '22px' }}>
-              {[
-                { value: '437', label: 'Total Apartments' },
-                { value: '363', label: 'Apartments Sold' },
-                { value: '100', label: 'Amenities' },
-              ].map((stat, i) => (
-                <div key={i} style={{
-                  textAlign: 'center', padding: '14px 8px',
-                  background: 'var(--color-bg-muted)',
-                  borderRadius: '10px',
-                  border: '1px solid var(--color-gold-light)',
-                }}>
-                  <p style={{ fontSize: '22px', fontWeight: '800', color: GOLD_DARK, fontFamily: F_JOST, margin: 0 }}>{stat.value}</p>
-                  <p style={{ fontSize: '10px', color: '#888', fontFamily: F_SANS, marginTop: '4px', fontWeight: '600', textTransform: 'uppercase', lineHeight: 1.3 }}>{stat.label}</p>
-                </div>
-              ))}
-            </div> */}
 
             <button onClick={() => setIsOpen(true)}
               className="btn-gold"
               data-aos="zoom-in" data-aos-delay="400"
-              style={{ padding: '11px 28px', fontSize: '13px', width: '100%' }}>
-              Know More
+              style={{ padding: '11px 28px', fontSize: '14px', width: '100%', fontWeight: '600' }}>
+              Request a Callback
             </button>
           </div>
         </div>

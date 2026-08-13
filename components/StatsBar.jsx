@@ -1,5 +1,5 @@
 const stats = [
-  { value: '3',    label: 'BHK Exclusive' },
+  { value: '3',    label: 'Villa & Bungalow Types' },
   { value: '4', label: 'Towers' },
   { value: '₹ 1.75 Cr', label: 'Onwards' },
   { value: '2B + G + 26', label: 'Floors' },

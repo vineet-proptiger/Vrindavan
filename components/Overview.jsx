@@ -29,9 +29,9 @@ const CurvedCorners = ({ bg = '#fff' }) => {
 }
 
 const infoItems = [
-  { label: 'Land Parcel', value: '14 Acres', bgColor: '#FFFDF2' },
-  { label: 'Floors',         value: 'G+M+3P+30 Floors', bgColor: '#FDF8F6' },
-  { label: 'Possession',     value: 'March 2031', bgColor: '#F4FAF4' },
+  { label: 'Years in Vrindavan Real Estate', value: '10+', bgColor: '#FFFDF2' },
+  { label: 'Happy Families & Investors',         value: '3,000+', bgColor: '#FDF8F6' },
+  { label: 'Sq. Yards Delivered',     value: '5L+', bgColor: '#F4FAF4' },
 ]
 
 const Overview = ({ setIsOpen }) => {
@@ -59,7 +59,7 @@ const Overview = ({ setIsOpen }) => {
           color: '#C9A96E', letterSpacing: '0.05em',
           textTransform: 'capitalize', margin: 0,
         }}>
-          Luxury Residential Project in Baner NX, Pune
+          NH-44, Vrindavan, Mathura
         </h3>
       </div>
 
@@ -83,12 +83,12 @@ const Overview = ({ setIsOpen }) => {
               color: '#C9A96E', letterSpacing: '0.05em',
               textTransform: 'capitalize', margin: 0,
             }}>
-              Luxury Residential Project in Baner NX, Pune
+              NH-44, Vrindavan, Mathura
             </h3>
           </div>
           
           {/* Paragraphs */}
-          <p data-aos="flip-down" data-aos-delay="500" style={{
+          <div data-aos="flip-down" data-aos-delay="500" style={{
             fontFamily: F_SANS, fontSize: '14.5px', color: '#4A4540',
             lineHeight: 1.9,
             marginTop: 0, marginBottom: '24px',
@@ -96,7 +96,13 @@ const Overview = ({ setIsOpen }) => {
           }}>
             {isExpanded ? (
               <>
-                Mahindra Lifespaces is launching an ambitious residential project called Mahindra Mahalunge in Baner NX, Pune. This majestic estate of 12 towers will feature spacious 2 BHK, 3 BHK, and 4 BHK residences along with a thoughtfully curated set of elite amenities. These homes will offer a mesmerising view of lush verdant neighbourhood and the Mula River. And amenities like a clubhouse, gymnasium, swimming pool, jogging track, landscaped garden, yoga zone, kids' play area, indoor games area, multipurpose court, and amphitheatre will make this enclave a heaven for everyone.{' '}
+                <p style={{ marginBottom: '16px', display: 'inline' }}>
+                  Discover a lifestyle of elegance and spiritual serenity at <strong>Hero Homes Vrindavan</strong>, an exclusive residential development offering premium <strong>Residential Plots</strong>. Located right on the Delhi-Mathura Road (NH-44), near the prestigious <strong>GLA University</strong>, this gated township is carefully crafted to offer modern premium living in a peaceful environment.
+                </p>
+                <br /><br />
+                <p style={{ display: 'inline' }}>
+                  Spanning a sprawling area of approximately <strong>40 Acres</strong>, Hero Homes Vrindavan features meticulously planned layouts ranging from <strong>90 to 200 Sq. Yards &amp; Premium Villas</strong>. The project offers a robust modern infrastructure combined with peaceful landscaped open spaces, a high-end clubhouse, and premium amenities—making it an exceptional investment opportunity and self-living choice close to historical holy temples like Banke Bihari and ISKCON.{' '}
+                </p>
                 <button
                   onClick={() => setIsExpanded(false)}
                   style={{
@@ -117,7 +123,9 @@ const Overview = ({ setIsOpen }) => {
               </>
             ) : (
               <>
-                Mahindra Lifespaces is launching an ambitious residential project called Mahindra Mahalunge in Baner NX, Pune. This majestic estate of 12 towers will feature spacious 2 BHK, 3 BHK, and 4 BHK residences along with a thoughtfully curated set of elite amenities. These homes will offer a mesmerising view of lush verdant neighbourhood and the Mula River...{' '}
+                <p style={{ display: 'inline' }}>
+                  Discover a lifestyle of elegance and spiritual serenity at <strong>Hero Homes Vrindavan</strong>, an exclusive residential development offering premium <strong>Residential Plots</strong>. Located right on the Delhi-Mathura Road (NH-44), near the prestigious <strong>GLA University</strong>, this gated township is carefully crafted to offer modern premium living in a peaceful environment...{' '}
+                </p>
                 <button
                   onClick={() => setIsExpanded(true)}
                   style={{
@@ -137,7 +145,7 @@ const Overview = ({ setIsOpen }) => {
                 </button>
               </>
             )}
-          </p>
+          </div>
 
           {/* Info Box */}
           <div
@@ -184,16 +192,17 @@ const Overview = ({ setIsOpen }) => {
 
         </div>
 
-        {/* ── Right Side: Image ── */}
+        {/* ── Right Side: Video ── */}
         <div className="w-full lg:w-1/2 mt-8 lg:mt-0 order-1 lg:order-2" data-aos="fade-left">
           <div className="relative w-full flex justify-center items-center">
-            <div className="relative w-full lg:w-[90%] aspect-video sm:aspect-[4/3] mx-auto rounded-xl shadow-2xl overflow-hidden">
-              <Image
-                src={overviewImage}
-                alt="Mahindra Mahalunge Overview"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+            <div className="relative w-full lg:w-[90%] aspect-video sm:aspect-[4/3] mx-auto rounded-xl shadow-2xl overflow-hidden bg-[#e0d6c8]">
+              <video 
+                src="/videos/project-video.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </div>
           </div>

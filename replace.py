@@ -17,7 +17,7 @@ def replace_in_file(filepath):
     # Specific for the whatsapp link where URL encoding is used
     content = content.replace('NBR%20Soul%20of%20The%20Season', 'Mahindra%20Mahalunge')
     
-    # Also replace Sarjapur Road / Bangalore with Baner NX, Pune
+    # Also replace Sarjapur Road / Bangalore with NH-44, Vrindavan, Mathura
     content = re.sub(r'(?i)Sarjapur Road', 'Baner NX', content)
     
     # In footer: Bangalore -> Pune, Gunjur -> Pune

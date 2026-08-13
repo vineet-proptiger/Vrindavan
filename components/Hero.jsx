@@ -4,8 +4,7 @@ import Image from 'next/image'
 import { heroImages } from '../lib/images'
 
 const slides = [
-  { img: heroImages.banner },
-  { img: heroImages.banner2 }
+  { img: heroImages.banner }
 ]
 
 
@@ -13,12 +12,8 @@ const slides = [
 const Hero = ({ setIsOpen }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 4000)
-    return () => clearInterval(timer)
-  }, [])
+  // Timer removed since there is only 1 slide
+
 
   return (
     <section className="hero-container">
@@ -175,38 +170,33 @@ const Hero = ({ setIsOpen }) => {
           will-change: transform;
         }
 
-        /* ─── Desktop & Standard Monitors (Scenario B: Solid 80px Header) ─── */
+        /* ─── Desktop & Standard Monitors ─── */
         @media (min-width: 1024px) {
           .hero-container {
             width: 100%;
-            height: calc(100vh - 80px);
-            min-height: 520px;
-            max-height: 1020px;
+            height: auto;
           }
           .hero-slider-wrapper {
-            position: absolute;
-            inset: 0;
+            position: relative;
             width: 100%;
-            height: 100%;
+            height: auto;
           }
           .slide-layer {
-            position: absolute;
-            inset: 0;
+            position: relative;
             width: 100%;
-            height: 100%;
+            height: auto;
           }
           .hero-image {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 80%;
+            height: auto;
+            object-fit: contain;
           }
           .hero-content {
             padding: 80px 80px 64px 48px !important;
           }
         }
 
-        /* ─── Compact Mini Laptops & Ultrabooks (e.g., ASUS VivoBook, 13-inch notebooks) ─── */
+        /* ─── Compact Mini Laptops & Ultrabooks ─── */
         @media (min-width: 1024px) and (max-height: 720px) {
           .hero-content {
             padding: 70px 60px 36px 48px !important;
@@ -244,26 +234,22 @@ const Hero = ({ setIsOpen }) => {
         @media (min-width: 768px) and (max-width: 1023px) {
           .hero-container {
             width: 100%;
-            height: calc(75vh - 60px);
-            min-height: 480px;
+            height: auto;
           }
           .hero-slider-wrapper {
-            position: absolute;
-            inset: 0;
+            position: relative;
             width: 100%;
-            height: 100%;
+            height: auto;
           }
           .slide-layer {
-            position: absolute;
-            inset: 0;
+            position: relative;
             width: 100%;
-            height: 100%;
+            height: auto;
           }
           .hero-image {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 80%;
+            height: auto;
+            object-fit: contain;
           }
           .hero-content {
             padding: 0 28px 42px !important;
@@ -392,7 +378,7 @@ const Hero = ({ setIsOpen }) => {
       <div className="hero-slider-wrapper grid md:hidden">
         <div className="slide-layer active" style={{ gridArea: '1 / 1 / 2 / 2' }}>
           <Image
-            src={heroImages.smDevice}
+            src={heroImages.banner}
             alt="Mobile Banner"
             width={768}
             height={800}
@@ -403,22 +389,19 @@ const Hero = ({ setIsOpen }) => {
         </div>
       </div>
 
-      {/* ── Dark overlay for text legibility ── */}
-      <div className="hero-overlay" />
+      {/* ── Dark overlay for text legibility ── 
+      <div className="hero-overlay" /> */}
 
-      {/* ── Content overlay ── */}
+      {/* ── Content overlay ── 
       <div className="hero-content">
         <>
-            {/* Main Heading */}
             <h1 className="hero-title" data-aos="zoom-in-up" data-aos-delay="0">
              Mahindra Mahalunge
             </h1>
 
-            {/* Subtitle */}
             <p className="hero-subtitle" data-aos="fade-right" data-aos-delay="100">
-              <span style={{ fontSize: '0.85em', fontWeight: 500, textTransform: 'none' }}>AT Baner NX, Pune</span>
+              <span style={{ fontSize: '0.85em', fontWeight: 500, textTransform: 'none' }}>AT NH-44, Vrindavan, Mathura</span>
             </p>
-            {/* Bullet Points */}
             <div className="hero-bullets" style={{ marginBottom: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
               {[
                 "Instant Benefits On Spot-Booking",
@@ -436,32 +419,27 @@ const Hero = ({ setIsOpen }) => {
               ))}
             </div>
 
-            {/* Restored Subtitle */}
             <p className="hero-price-line" data-aos="fade-up" data-aos-delay="1300" style={{ marginBottom: '0px' }}>
               2, 3 &amp; 4 BHK LUXURY RESIDENCES
             </p>
 
-            {/* CTA Row */}
             <div className="hero-cta-row" style={{ marginTop: '16px' }}>
 
-              {/* Button 1 — Static Price Badge */}
               <div data-aos="flip-up" data-aos-delay="1400">
                 <div
                   className="btn-gold-outline hero-btn-one"
                   style={{ fontSize: '14px', padding: '11px 22px', pointerEvents: 'none', fontWeight: '700', textTransform: 'none' }}
                 >
-                  Price starts <span className="hero-price-amt" style={{ fontSize: '15px', marginLeft: '6px' }}>85 Lakhs*</span>
+                  Price starts <span className="hero-price-amt" style={{ fontSize: '15px', marginLeft: '6px' }}>1.10 Cr*</span>
                 </div>
               </div>
 
-          {/* Button 2 — Popup Trigger (global btn-brand) */}
           <div data-aos="flip-up" data-aos-delay="1500">
             <button
               onClick={() => setIsOpen(true)}
               className="btn-brand"
               style={{ fontSize: '12px', padding: '11px 22px' }}
             >
-              {/* Calendar icon */}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                 <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -474,7 +452,7 @@ const Hero = ({ setIsOpen }) => {
 
         </div>
         </>
-      </div>
+      </div> */}
 
     </section>
   )

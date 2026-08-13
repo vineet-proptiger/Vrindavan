@@ -11,21 +11,27 @@ const Footer = () => (
 
     <div style={{ maxWidth: '860px', margin: '0 auto', padding: '56px 24px 32px', textAlign: 'center' }}>
       <h2 style={{ fontSize: '24px', fontWeight: '800', fontFamily: F_JOST, marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.05em' }} data-aos="fade-in">
-        Mahindra Mahalunge
+        About Developer
       </h2>
-      <p style={{ fontSize: '13px', color: 'var(--color-gold)', fontFamily: F_JOST, fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '12px' }}>
-        2, 3 & 4 BHK Luxury Residences — Baner NX, Pune
-      </p>
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px' }}>
-        <span style={{ width: '36px', height: '2.5px', background: 'linear-gradient(90deg, var(--color-gold), var(--color-gold-light))', borderRadius: '2px' }} />
+      <div className="flex flex-col md:flex-row items-center justify-center gap-2 mb-4">
+        <span className="h-[1px] w-8 bg-[var(--color-gold-dark)] hidden md:block"></span>
+        <span className="text-[var(--color-gold-dark)] text-xs md:text-sm font-bold tracking-widest uppercase text-center" style={{ fontFamily: 'var(--font-sans), Open Sans, sans-serif' }}>
+          Cozy Villas &amp; Spacious Bungalows — NH-44, Vrindavan, Mathura
+        </span>
+        <span className="h-[1px] w-8 bg-[var(--color-gold-dark)] hidden md:block"></span>
       </div>
-      <p style={{ fontSize: '15px', color: '#bbb', fontFamily: F_SANS, lineHeight: 1.8, marginBottom: '24px', textAlign: 'justify' }}
-        data-aos="fade-in" data-aos-delay="100">
-        The luxury residential project, Mahindra Mahalunge introduces the best  2, 3 & 4 BHK apartments in Baner NX,Pune. Along with bespoke conveniences the reputed developer aims to render privacy.
-      </p>
+
+      <div className="text-gray-400 text-sm md:text-[15px] leading-relaxed max-w-3xl mx-auto text-center" style={{ fontFamily: 'var(--font-sans), Open Sans, sans-serif' }}>
+        <p style={{ marginBottom: '16px' }}>
+          Our family began in 1973 with a simple promise in the jewellery business: a customer should never have to doubt the purity of what they are buying. That is the same standard we hold in real estate.
+        </p>
+        <p>
+          KB Realty builds residential, plotted and mixed-use developments in Vrindavan and Mathura. We are local. We know the land, the families and the stakeholders here, and we choose sites with a long-term lens rather than chasing every parcel on the market.
+        </p>
+      </div>
       
       {/* RERA Block */}
-      <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.05)', padding: '10px 24px', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.1)' }}>
+      <div style={{ display: 'inline-block', background: 'rgba(255,255,255,0.05)', padding: '10px 24px', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.1)', marginTop: '24px' }}>
         <span style={{ fontFamily: F_SANS, fontSize: '14px', color: '#aaa' }}>RERA No : </span>
         <strong style={{ fontFamily: F_JOST, fontSize: '15px', color: '#fff', letterSpacing: '0.04em', wordBreak: 'break-word' }}>Comming Soon</strong>
       </div>

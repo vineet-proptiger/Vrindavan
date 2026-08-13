@@ -6,14 +6,12 @@ const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 
 const locationItems = [
-  { name: 'Mumbai-Bangalore Highway', dist: '15 mins' },
-  { name: 'Pune-Paud Road', dist: '15 mins' },
-  { name: 'Chandani Chowk', dist: '30 mins' },
-  { name: 'Hinjewadi IT Park', dist: '15 mins' },
-  { name: 'Mahalunge Circle', dist: '2 mins' },
-  { name: 'Maan Road', dist: '5 mins' },
-  { name: 'Baner / Balewadi', dist: '10 mins' },
-  { name: 'Delhi Public School', dist: 'Just Opposite' },
+  { name: 'NH 19 — Golden Quadrilateral', dist: 'CONNECTED' },
+  { name: 'Mathura Junction Railway', dist: 'NEARBY' },
+  { name: 'Yamuna Expressway', dist: 'DIRECT ACCESS' },
+  { name: 'Jewar Intl Airport (upcoming)', dist: '~90 MIN' },
+  { name: 'Delhi (via NH 19)', dist: '~2.5 HRS' },
+  { name: 'Agra & Mathura', dist: 'ADJACENT' },
 ]
 
 const Location = () => {
@@ -90,11 +88,11 @@ const Location = () => {
               background: '#EAE5DC'
             }}>
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242064.6412893556!2d73.43892138671875!3d18.56231250000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bd23899c4255%3A0xd1c64c7ae74e9a5!2sMahindra%20Lifespaces%20in%20Mahalunge!5e0!3m2!1sen!2sin!4v1786593710699!5m2!1sen!2sin" 
+                src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d7070.675458989901!2d77.582688!3d27.614055!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDM2JzUwLjYiTiA3N8KwMzUnMDcuMCJF!5e0!3m2!1sen!2sin!4v1786641476264!5m2!1sen!2sin" 
                 style={{ border: 0, position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
                 allowFullScreen="" 
                 loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
               ></iframe>
             </div>
           </div>

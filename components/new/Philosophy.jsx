@@ -19,7 +19,14 @@ export default function Philosophy({ setIsOpen }) {
       </div>
     </div>
     <div>
-      <img decoding="async" src="assets/31942c40e9.webp" alt="Hero Homes Vrindavan Overview" style={{'width': '100%', 'boxShadow': '0 30px 60px rgba(0,0,0,0.18)'}} />
+      <video 
+        src="/videos/project-video.mp4" 
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
+        style={{'width': '100%', 'boxShadow': '0 30px 60px rgba(0,0,0,0.18)', 'borderRadius': '8px'}} 
+      />
     </div>
   </div>
 </section>

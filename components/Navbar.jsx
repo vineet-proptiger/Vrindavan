@@ -48,18 +48,16 @@ const Navbar = ({ setIsOpen }) => {
         {/* Left Side: Logo and Navigation Links */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '48px' }}>
           {/* LOGO */}
-          <a href="#" style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
-            <style>{`
-              .nav-logo { height: 54px; width: auto; display: block; object-fit: contain; transform: scale(1.3, 1.15); transform-origin: center; }
-              @media(max-width: 768px) {
-                .nav-logo { height: 48px; transform: scale(1.2, 1.1); }
-              }
-            `}</style>
-            <img
-              src={logoImages.main}
-              alt="Mahindra Mahalunge"
-              className="nav-logo"
-            />
+          <a href="#" style={{ flexShrink: 0, display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+            <p className="devanagari" style={{ 
+              color: '#d4a843', 
+              fontSize: '24px', 
+              margin: '0', 
+              letterSpacing: '0.06em', 
+              textShadow: '0 2px 4px rgba(0,0,0,0.05)' 
+            }}>
+              ॥ श्री वृन्दावन धाम ॥
+            </p>
           </a>
 
           {/* NAV LINKS */}
