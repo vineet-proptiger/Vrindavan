@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const base = 'https://kbplotsvrindavan.com'
+  const base = 'https://herohomesplotsvrindavan.co.in'
 
   return [
     {

@@ -5,6 +5,6 @@ export default function robots() {
       allow: ['/'],
       // disallow: ['/vin', '/sector-46-gurgaon'],
     },
-    sitemap: 'https://kbplotsvrindavan.com/sitemap.xml',
+    sitemap: 'https://herohomesplotsvrindavan.co.in/sitemap.xml',
   }
 }
