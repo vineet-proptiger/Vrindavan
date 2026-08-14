@@ -2,15 +2,17 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { masterplanImages } from '../lib/images'
+import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons'
 
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 
 const plans = [
   { label: 'Site Master Plan', img: masterplanImages.masterPlan },
-  { label: 'Cozy Villa',       img: masterplanImages.bhk2 },
-  { label: 'Spacious Bungalow',       img: masterplanImages.bhk3 },
-  { label: 'Duplex Villa',       img: masterplanImages.bhk45 },
+  { label: 'Plots', img: masterplanImages.bhk2 },
+  // { label: 'Cozy Villa',       img: masterplanImages.bhk2 },
+  // { label: 'Spacious Bungalow',       img: masterplanImages.bhk3 },
+  // { label: 'Duplex Villa',       img: masterplanImages.bhk45 },
 ]
 
 const MasterPlan = ({ setIsOpen }) => {
@@ -75,58 +77,59 @@ const MasterPlan = ({ setIsOpen }) => {
                 <button key={idx} onClick={() => setActivePlan(idx)}
                   style={{
                     width: '100%', textAlign: 'left',
-                    padding: '15px 20px',
-                    background: activePlan === idx ? 'var(--color-gold-bg)' : '#fff',
+                    padding: '16px 20px',
+                    background: activePlan === idx ? 'linear-gradient(90deg, rgba(30,109,122,0.05) 0%, #fff 100%)' : '#fff',
                     border: 'none',
-                    borderLeft: activePlan === idx ? '3px solid var(--color-gold)' : '3px solid transparent',
+                    borderLeft: activePlan === idx ? '3px solid #1E6D7A' : '3px solid transparent',
                     borderBottom: idx < plans.length - 1 ? '1px solid #f5f5f5' : 'none',
                     cursor: 'pointer',
-                    transition: 'all 0.2s',
+                    transition: 'all 0.3s',
                     display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px',
                   }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                     {/* Number badge */}
                     <span style={{
-                      width: '28px', height: '28px', borderRadius: '8px', flexShrink: 0,
-                      background: activePlan === idx ? 'var(--color-gold)' : '#f3f4f6',
+                      width: '32px', height: '32px', borderRadius: '50%', flexShrink: 0,
+                      background: activePlan === idx ? '#1E6D7A' : '#f3f4f6',
                       color: activePlan === idx ? '#fff' : '#9ca3af',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: '11px', fontFamily: F_JOST, fontWeight: '800',
-                      transition: 'all 0.2s',
+                      fontSize: '12px', fontFamily: F_JOST, fontWeight: '700',
+                      boxShadow: activePlan === idx ? '0 4px 10px rgba(30,109,122,0.3)' : 'none',
+                      transition: 'all 0.3s',
                     }}>
                       {String(idx + 1).padStart(2, '0')}
                     </span>
                     <span style={{
-                      fontSize: '13px', fontWeight: '700', fontFamily: F_JOST,
-                      color: activePlan === idx ? 'var(--color-gold)' : '#374151',
-                      transition: 'color 0.2s',
+                      fontSize: '14px', fontWeight: activePlan === idx ? '800' : '600', fontFamily: F_JOST,
+                      color: activePlan === idx ? '#1E6D7A' : '#4b5563',
+                      letterSpacing: '0.03em',
+                      transition: 'color 0.3s',
                     }}>{plan.label}</span>
                   </div>
-                  {/* Arrow */}
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                    stroke={activePlan === idx ? 'var(--color-gold)' : '#d1d5db'}
-                    strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
+                  {/* Thematic Icon / Arrow */}
+                  {activePlan === idx ? (
+                    <PeacockFeatherIcon size={24} style={{ transform: 'rotate(-25deg)' }} />
+                  ) : (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      stroke="#d1d5db"
+                      strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                  )}
                 </button>
               ))}
 
               {/* Info box */}
               <div style={{
-                margin: '12px', padding: '12px',
-                background: 'var(--color-gold-bg)', borderRadius: '10px',
-                border: '1px dashed var(--color-gold-light)',
+                margin: '16px', padding: '16px',
+                background: 'rgba(213, 194, 168, 0.1)', borderRadius: '8px',
+                border: '1px solid rgba(213, 194, 168, 0.4)',
               }}>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                    stroke="var(--color-gold)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                    style={{ flexShrink: 0, marginTop: '1px' }}>
-                    <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" />
-                    <line x1="12" y1="16" x2="12.01" y2="16" />
-                  </svg>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <FluteIcon width={32} height={12} style={{ flexShrink: 0 }} />
                   <p style={{
-                    fontFamily: F_SANS, fontSize: '11px', color: '#6b7280',
-                    margin: 0, lineHeight: 1.6
+                    fontFamily: F_SANS, fontSize: '11.5px', color: '#555',
+                    margin: 0, lineHeight: 1.5, fontWeight: '500'
                   }}>
                     Register to receive detailed floor plans &amp; pricing directly to your inbox.
                   </p>
@@ -145,15 +148,16 @@ const MasterPlan = ({ setIsOpen }) => {
             }}>
               {/* Brand top accent */}
               <div style={{
-                position: 'absolute', top: 0, left: 0, right: 0, height: '3px',
-                background: 'linear-gradient(90deg, var(--color-gold), var(--color-gold-light))', zIndex: 10,
+                position: 'absolute', top: 0, left: 0, right: 0, height: '4px',
+                background: 'linear-gradient(90deg, #1E6D7A, #15525C)', zIndex: 10,
               }} />
 
               {/* Plan label top-left */}
               <div style={{
                 position: 'absolute', top: '16px', left: '16px', zIndex: 10,
-                background: 'var(--color-gold)', opacity: 0.9, backdropFilter: 'blur(6px)',
-                borderRadius: '8px', padding: '5px 12px',
+                background: 'rgba(30, 109, 122, 0.9)', backdropFilter: 'blur(6px)',
+                borderRadius: '8px', padding: '6px 14px',
+                boxShadow: '0 4px 12px rgba(30,109,122,0.3)'
               }}>
                 <span style={{
                   color: '#fff', fontSize: '11px', fontFamily: F_JOST,
@@ -171,45 +175,33 @@ const MasterPlan = ({ setIsOpen }) => {
                   transform: 'scale(1.06)' 
                 }} />
 
-              {/* Dark overlay */}
+              {/* Horizontal Dark Strip overlay in center */}
               <div style={{
-                position: 'absolute', inset: 0,
-                background: 'rgba(17,24,39,0.45)',
-              }} />
-
-              {/* CTA in center */}
-              <div style={{
-                position: 'absolute', inset: 0, zIndex: 5,
+                position: 'absolute', top: '50%', left: 0, right: 0,
+                transform: 'translateY(-50%)',
+                background: 'rgba(0, 0, 0, 0.6)',
+                backdropFilter: 'blur(4px)',
+                padding: '32px 20px',
                 display: 'flex', flexDirection: 'column',
-                alignItems: 'center', justifyContent: 'center', gap: '12px',
+                alignItems: 'center', justifyContent: 'center', zIndex: 5,
+                borderTop: '1px solid rgba(255,255,255,0.1)',
+                borderBottom: '1px solid rgba(255,255,255,0.1)',
               }}>
-                <div style={{
-                  width: '52px', height: '52px', borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(4px)',
-                  border: '2px solid rgba(255,255,255,0.3)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  marginBottom: '4px',
-                }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                    stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18M9 21V9" />
-                  </svg>
-                </div>
-                <p style={{
-                  fontFamily: F_JOST, fontSize: '13px', color: 'rgba(255,255,255,0.7)',
-                  margin: 0, fontWeight: '600', letterSpacing: '0.04em'
-                }}>
-                  Register to Unlock Floor Plan
-                </p>
                 <button onClick={() => setIsOpen(true)} className="btn-gold"
-                  data-aos="zoom-in" data-aos-delay="400"
-                  style={{ padding: '11px 32px', fontSize: '13px', letterSpacing: '0.1em' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                  </svg>
-                  View Plan
+                  data-aos="zoom-in" data-aos-delay="200"
+                  style={{ 
+                    padding: '14px 36px', 
+                    fontSize: '16px', 
+                    letterSpacing: '0.05em', 
+                    fontWeight: '700', 
+                    borderRadius: '4px',
+                    fontFamily: F_SANS,
+                    color: '#fff',
+                    background: 'var(--color-brand)',
+                    border: 'none',
+                    boxShadow: '0 4px 15px rgba(0,0,0,0.3)'
+                  }}>
+                  Request {plans[activePlan].label} Layout
                 </button>
               </div>
             </div>

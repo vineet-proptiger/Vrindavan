@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const PeacockFeatherIcon = ({ size = 20, className = '' }) => (
-  <svg width={size} height={size} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+export const PeacockFeatherIcon = ({ size = 20, className = '', style = {} }) => (
+  <svg width={size} height={size} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} style={style}>
     <g transform="rotate(20 32 32)">
       {/* Outer wispy aura */}
       <path d="M32 60 C32 60 16 40 16 25 C16 10 32 5 32 5 C32 5 48 10 48 25 C48 40 32 60 32 60Z" fill="#78B833" opacity="0.6"/>
@@ -19,8 +19,8 @@ export const PeacockFeatherIcon = ({ size = 20, className = '' }) => (
   </svg>
 );
 
-export const FluteIcon = ({ width = 40, height = 14, className = '' }) => (
-  <svg width={width} height={height} viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+export const FluteIcon = ({ width = 40, height = 14, className = '', style = {} }) => (
+  <svg width={width} height={height} viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} style={style}>
     {/* Body */}
     <rect x="5" y="12" width="110" height="12" rx="6" fill="#F4C47A" stroke="#B8860B" strokeWidth="2"/>
     

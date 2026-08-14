@@ -70,21 +70,21 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
                   Book A Free <span style={{ color: 'var(--red, #ed1c24)' }}>Site Visit</span>
                 </h3>
               </div>
-              <div className="flex items-center justify-center gap-2 mt-1">
+              <div className="flex items-center justify-center gap-2 mt-2">
                 {/* Left Icon Group (Flipped) */}
                 <div style={{ position: 'relative', width: '40px', height: '20px', transform: 'scaleX(-1)' }}>
                   <FluteIcon width={40} height={12} style={{ position: 'absolute', bottom: 0, left: 0 }} />
-                  <PeacockFeatherIcon size={16} style={{ position: 'absolute', top: '-6px', left: '16px', zIndex: 2, transform: 'rotate(15deg)' }} />
+                  <PeacockFeatherIcon size={16} style={{ position: 'absolute', bottom: '8px', left: '18px', zIndex: 2, transform: 'rotate(25deg)' }} />
                 </div>
                 
-                <p className="devanagari text-center" style={{ color: 'var(--gold-warm, #d4a843)', fontSize: '16px', margin: '0', letterSpacing: '0.06em' }}>
+                <p className="devanagari text-center" style={{ color: 'var(--gold-warm, #d4a843)', fontSize: '16px', margin: '0 4px', letterSpacing: '0.06em' }}>
                   ॥ हरे कृष्ण हरे कृष्ण ॥
                 </p>
                 
                 {/* Right Icon Group */}
                 <div style={{ position: 'relative', width: '40px', height: '20px' }}>
                   <FluteIcon width={40} height={12} style={{ position: 'absolute', bottom: 0, left: 0 }} />
-                  <PeacockFeatherIcon size={16} style={{ position: 'absolute', top: '-6px', left: '16px', zIndex: 2, transform: 'rotate(15deg)' }} />
+                  <PeacockFeatherIcon size={16} style={{ position: 'absolute', bottom: '8px', left: '18px', zIndex: 2, transform: 'rotate(25deg)' }} />
                 </div>
               </div>
             </div>
@@ -106,7 +106,7 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
                 </div>
                 <div className="flex items-center gap-1.5">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#117937" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
-                  <span>Luxury Amenities</span>
+                  <span>Premium Amenities</span>
                 </div>
               </div>
             </div>

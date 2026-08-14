@@ -6,40 +6,40 @@ const PRIMARY = "var(--color-primary, #3A2A0E)";
 
 const units = [
   {
-    category: "The Garden Plots",
-    type: "Cozy Villa",
-    size: "On Request",
+    // category: "The Garden Plots",
+    type: "Premium Plots",
+    size: "125 Sq.Yds",
     price: "1.10 Cr*",
     oldPrice: null,
     btnText: "Get Details",
     features: [
-      "Exclusive Cozy Villa Design",
+      <>Excellent Connectivity to<br /><span className="whitespace-nowrap">Vrindavan’s Key Destinations</span></>,
       "Premium Specifications",
       "Luxury Finishes",
     ],
   },
   {
-    category: "The Estate Plots",
-    type: "Spacious Bungalow",
-    size: "On Request",
+    // category: "The Estate Plots",
+    type: "Premium Plots",
+    size: "150 Sq.Yds",
     price: "Price on Request",
     oldPrice: null,
     btnText: "Get Details",
     features: [
-      "Exclusive Spacious Bungalow Design",
+      <>Excellent Connectivity to<br /><span className="whitespace-nowrap">Vrindavan’s Key Destinations</span></>,
       "Premium Specifications",
       "Luxury Finishes",
     ],
   },
   {
-    category: "The Signature Plots",
-    type: "Duplex Villa",
-    size: "On Request",
+    // category: "The Signature Plots",
+    type: "Premium Plots",
+    size: "200 Sq.Yds",
     price: "Price on Request",
     oldPrice: null,
     btnText: "Get Details",
     features: [
-      "Exclusive Duplex Villa Design",
+      <>Excellent Connectivity to<br /><span className="whitespace-nowrap">Vrindavan’s Key Destinations</span></>,
       "Premium Specifications",
       "Luxury Finishes",
     ],
@@ -116,14 +116,26 @@ const Pricing = ({ setIsOpen }) => {
                     {unit.category}
                   </h4>
                   
-                  {/* Title & Size */}
-                  <h3
-                    data-aos={idx % 2 === 0 ? "flip-left" : "flip-right"} data-aos-delay="500"
-                    className="font-bold mb-2 whitespace-nowrap"
-                    style={{ fontFamily: F_SANS, fontSize: "clamp(17px, 1.6vw, 24px)", color: "#1E6D7A", letterSpacing: "0.01em" }}
-                  >
-                    {unit.type}
-                  </h3>
+                  {/* Title / Badge */}
+                  <div className="mb-4" data-aos={idx % 2 === 0 ? "flip-left" : "flip-right"} data-aos-delay="500">
+                    <span 
+                      style={{ 
+                        display: 'inline-flex',
+                        background: 'rgba(30, 109, 122, 0.06)', 
+                        color: '#1E6D7A',
+                        padding: '6px 16px', 
+                        borderRadius: '100px',
+                        fontFamily: F_SANS,
+                        fontSize: '13.5px',
+                        fontWeight: '700',
+                        letterSpacing: '0.08em',
+                        textTransform: 'uppercase',
+                        border: '1px solid rgba(30, 109, 122, 0.15)'
+                      }}
+                    >
+                      {unit.type}
+                    </span>
+                  </div>
                   <div className="flex items-center gap-2 mb-6">
                     <span className="text-gray-400 text-xs uppercase tracking-wider font-semibold" style={{ fontFamily: F_SANS }}>Size:</span>
                     <p className="text-sm font-semibold" style={{ fontFamily: F_SANS, color: PRIMARY }}>
