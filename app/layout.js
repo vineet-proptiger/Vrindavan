@@ -34,13 +34,13 @@ const nephilm = localFont({
 
 export const metadata = {
   metadataBase: new URL('https://herohomesplotsvrindavan.co.in/'),
-  title: 'Hero Homes Plots in Vrindavan | Premium Freehold Plots in Mathura',
+  title: '100% MVDA Approved Hero Homes Plots in Vrindavan, Mathura',
   description: 'Discover Hero Homes Plots in Vrindavan, Mathura. Premium freehold residential plots starting at 1.10 Cr* with world-class amenities and 80% open spaces.',
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
-    title: 'Hero Homes Plots in Vrindavan | Premium Freehold Plots in Mathura',
+    title: '100% MVDA Approved Hero Homes Plots in Vrindavan, Mathura',
     description: 'Discover Hero Homes Plots in Vrindavan, Mathura. Premium freehold residential plots starting at 1.10 Cr* with world-class amenities and 80% open spaces.',
     url: 'https://herohomesplotsvrindavan.co.in/',
     siteName: 'Hero Homes Plots in Vrindavan',
@@ -57,7 +57,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hero Homes Plots in Vrindavan | Premium Freehold Plots in Mathura',
+    title: '100% MVDA Approved Hero Homes Plots in Vrindavan, Mathura',
     description: 'Discover Hero Homes Plots in Vrindavan, Mathura. Premium freehold residential plots starting at 1.10 Cr* with world-class amenities and 80% open spaces.',
     images: ['/favicon.svg'],
   },

@@ -30,7 +30,7 @@ const CurvedCorners = ({ bg = '#fff' }) => {
 
 const infoItems = [
   { label: 'Years in Vrindavan Real Estate', value: '10+', bgColor: '#FFFDF2' },
-  { label: 'Happy Families & Investors',         value: '3,000+', bgColor: '#FDF8F6' },
+  { label: '100% MVDA Approved',         value: 'Yes', bgColor: '#FDF8F6' },
   { label: 'Sq. Yards Delivered',     value: '5L+', bgColor: '#F4FAF4' },
 ]
 
@@ -191,15 +191,14 @@ const Overview = ({ setIsOpen }) => {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-[1px]" style={{ background: '#D5C2A8' }}>
             {infoItems.map((item, i) => (
-              <div key={i} className="flex flex-col justify-center px-6 py-5 sm:px-3 sm:py-[18px]" style={{
+              <div key={i} className="flex flex-col justify-center px-6 py-5 sm:px-3 sm:py-[18px] text-left lg:text-center" style={{
                 background: item.bgColor || '#fff',
-                textAlign: 'left',
               }}>
                 <div 
                   data-aos="fade" 
                   data-aos-delay={600 + i * 150} 
                   data-aos-duration="800"
-                  className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start w-full"
+                  className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start lg:items-center w-full"
                 >
                   <p 
                     className="mb-0 sm:mb-1.5"
