@@ -9,7 +9,7 @@ const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 
 const plans = [
   { label: 'Site Master Plan', img: masterplanImages.masterPlan },
-  { label: 'Plots', img: masterplanImages.bhk2 },
+  { label: 'Plots Layout', img: masterplanImages.masterPlan },
   // { label: 'Cozy Villa',       img: masterplanImages.bhk2 },
   // { label: 'Spacious Bungalow',       img: masterplanImages.bhk3 },
   // { label: 'Duplex Villa',       img: masterplanImages.bhk45 },
