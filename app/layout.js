@@ -39,6 +39,28 @@ export const metadata = {
   icons: {
     icon: '/favicon.svg',
   },
+  openGraph: {
+    title: 'Hero Homes Plots in Vrindavan | Premium Freehold Plots in Mathura',
+    description: 'Discover Hero Homes Plots in Vrindavan, Mathura. Premium freehold residential plots starting at 1.10 Cr* with world-class amenities and 80% open spaces.',
+    url: 'https://herohomesplotsvrindavan.co.in/',
+    siteName: 'Hero Homes Plots in Vrindavan',
+    images: [
+      {
+        url: '/favicon.svg',
+        width: 800,
+        height: 600,
+        alt: 'Hero Homes Plots in Vrindavan Favicon',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hero Homes Plots in Vrindavan | Premium Freehold Plots in Mathura',
+    description: 'Discover Hero Homes Plots in Vrindavan, Mathura. Premium freehold residential plots starting at 1.10 Cr* with world-class amenities and 80% open spaces.',
+    images: ['/favicon.svg'],
+  },
 }
 
 export default function RootLayout({ children }) {
