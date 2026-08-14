@@ -107,7 +107,7 @@ const Navbar = ({ setIsOpen }) => {
             letterSpacing: '0.04em',
             boxShadow: '0 4px 12px rgba(201, 169, 110, 0.2)',
           }}>
-            <Phone size={15} fill="currentColor" />
+            <Phone size={15} fill="currentColor" className="animate-phone-ring" />
             9718344024
           </a>
         </div>
@@ -180,7 +180,7 @@ const Navbar = ({ setIsOpen }) => {
               textDecoration: 'none',
               boxShadow: '0 4px 12px rgba(201, 169, 110, 0.15)',
             }}>
-              <Phone size={15} fill="currentColor" />
+              <Phone size={15} fill="currentColor" className="animate-phone-ring" />
               9718344024
             </a>
           </div>
