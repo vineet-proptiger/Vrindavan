@@ -24,11 +24,8 @@ const Footer = () => (
       </div>
 
       <div className="text-gray-400 text-sm md:text-[15px] leading-relaxed max-w-3xl mx-auto text-center" style={{ fontFamily: 'var(--font-sans), Open Sans, sans-serif' }}>
-        <p style={{ marginBottom: '16px' }}>
-          Our family began in 1973 with a simple promise in the jewellery business: a customer should never have to doubt the purity of what they are buying. That is the same standard we hold in real estate.
-        </p>
         <p>
-          KB Realty builds residential, plotted and mixed-use developments in Vrindavan and Mathura. We are local. We know the land, the families and the stakeholders here, and we choose sites with a long-term lens rather than chasing every parcel on the market.
+          Hero Homes Realty is one of India’s most respected business organisation. While the Hero name is widely acknowledged for its leadership in the two-wheeler industry, Hero Enterprise has even diversified into multiple sectors, including real estate, with Hero Realty Limited at the forefront of its housing initiatives. Hero Realty carries forward the same values that define the larger Hero Group—trust, transparency, customer focus, and innovation.
         </p>
       </div>
       
