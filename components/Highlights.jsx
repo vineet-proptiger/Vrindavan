@@ -138,6 +138,7 @@ const Highlights = ({ setIsOpen }) => (
 
       {/* Heading */}
       <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+        <div className="ornament"><span className="feather">❋</span></div>
         <h2 data-aos="flip-left" data-aos-delay="300" style={{
           fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
           color: '#684C1B', letterSpacing: '0.1em',
@@ -146,6 +147,7 @@ const Highlights = ({ setIsOpen }) => (
         }}>
           Designed for Comfort, Wellness &amp; Leisure At Hero Homes Plots in Vrindavan
         </h2>
+        <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ सुख सुविधा ॥</p>
       </div>
 
       {/* Bordered container with curved concave corner notches */}
@@ -171,6 +173,8 @@ const Highlights = ({ setIsOpen }) => (
                 background: 'var(--color-brand)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 margin: '0 auto 24px',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 0 0 4px rgba(212,168,67,0.12)'
               }}>
                 <Icon />
               </div>

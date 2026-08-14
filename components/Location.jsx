@@ -24,6 +24,7 @@ const Location = () => {
 
         {/* Section Header */}
         <div style={{ marginBottom: '40px', textAlign: 'center' }} data-aos="fade-up">
+           <div className="ornament"><span className="feather">❋</span></div>
            <h2 style={{
              fontFamily: F_JOST, fontWeight: '700', fontSize: '18px',
              color: '#684C1B', letterSpacing: '0.1em', textTransform: 'uppercase', margin: 0,
@@ -31,6 +32,7 @@ const Location = () => {
            }}>
              LOCATION ADVANTAGES
            </h2>
+           <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ स्थान लाभ ॥</p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8 items-stretch">
@@ -68,7 +70,7 @@ const Location = () => {
                     <div style={{ padding: '10px 16px', borderRight: '1px solid #D5C2A8', display: 'flex', alignItems: 'center' }}>
                       {item.name}
                     </div>
-                    <div style={{ padding: '10px 16px', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ padding: '10px 16px', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ed1c24', fontWeight: '700' }}>
                       {item.dist}
                     </div>
                   </div>

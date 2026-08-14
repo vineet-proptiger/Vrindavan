@@ -128,6 +128,7 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", id = "h
       <div className="container mx-auto px-4 md:px-8 max-w-[1200px]">
 
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <div className="ornament"><span className="feather">❋</span></div>
           <h2 style={{
             fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
             color: '#684C1B', letterSpacing: '0.1em',
@@ -136,6 +137,7 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", id = "h
           }}>
             {title}
           </h2>
+          <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ दिव्य दर्शन ॥</p>
         </div>
 
         {/* ── Main Sliding Track Gallery (Premium & Zero-Flash) ── */}
@@ -205,13 +207,14 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", id = "h
 
         {/* ── Bottom Arrows ── */}
         <div className="flex items-center gap-3 mt-6 ml-2">
-          <button onClick={prevSlide} className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-400 text-gray-600 hover:bg-gray-200 transition-colors">
+          <button onClick={prevSlide} className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-400 text-gray-600 hover:border-[var(--gold-warm)] hover:bg-[#faf6f0] transition-colors" style={{borderColor:'var(--gold-warm)'}}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="19" y1="12" x2="5" y2="12" />
               <polyline points="12 19 5 12 12 5" />
             </svg>
           </button>
-          <button onClick={nextSlide} className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-400 text-gray-600 hover:bg-gray-200 transition-colors">
+          <span style={{fontFamily:"'Cormorant Garamond',serif",fontSize:'16px',color:'var(--ink-mute)',letterSpacing:'0.1em',minWidth:'50px',textAlign:'center'}}>{getRealIndex(index) + 1} / {numItems}</span>
+          <button onClick={nextSlide} className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-400 text-gray-600 hover:border-[var(--gold-warm)] hover:bg-[#faf6f0] transition-colors" style={{borderColor:'var(--gold-warm)'}}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />

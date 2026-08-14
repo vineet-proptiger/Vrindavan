@@ -73,6 +73,7 @@ const Pricing = ({ setIsOpen }) => {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* NEW HEADING STYLE */}
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <div className="ornament"><span className="feather">❋</span></div>
           <h2 data-aos="flip-left" data-aos-delay="500" style={{
             fontFamily: "var(--font-jost), Montserrat, sans-serif", fontWeight: '700', fontSize: '17px',
             color: '#684C1B', letterSpacing: '0.1em',
@@ -81,6 +82,7 @@ const Pricing = ({ setIsOpen }) => {
           }}>
             Configurations &amp; Pricing
           </h2>
+          <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ अपना घर अपना धाम ॥</p>
         </div>
 
         {/* COMBINED PRICING BLOCK */}

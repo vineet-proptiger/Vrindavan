@@ -40,12 +40,20 @@ const Overview = ({ setIsOpen }) => {
   return (
     <section
       id="overview"
-      style={{ scrollMarginTop: '80px', background: '#fff', padding: '72px 0 80px', borderBottom: '1px solid #f0ede6' }}
+      style={{ 
+        scrollMarginTop: '80px', 
+        background: '#fff', 
+        padding: '72px 0 80px', 
+        borderBottom: '1px solid #f0ede6',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
     >
       <div className="container mx-auto px-4 sm:px-8 max-w-[1200px]">
       
       {/* ── Mobile Section Heading ── */}
       <div className="block lg:hidden" style={{ marginBottom: '32px', textAlign: 'left' }}>
+        <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'15px',margin:'0 0 12px',letterSpacing:'0.06em'}}>॥ श्री वृन्दावन धाम ॥</p>
         <h2 data-aos="flip-right" data-aos-delay="500" style={{
           fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
           color: '#3A2A0E', letterSpacing: '0.1em',
@@ -57,10 +65,11 @@ const Overview = ({ setIsOpen }) => {
         <h3 style={{
           fontFamily: F_JOST, fontWeight: '500', fontSize: '14px',
           color: '#C9A96E', letterSpacing: '0.05em',
-          textTransform: 'capitalize', margin: 0,
+          textTransform: 'capitalize', margin: '0 0 14px 0',
         }}>
           NH-44, Vrindavan, Mathura
         </h3>
+        <div style={{width:'50px',height:'2px',background:'var(--red, #ed1c24)'}}></div>
       </div>
 
       <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-14">
@@ -70,6 +79,7 @@ const Overview = ({ setIsOpen }) => {
           
           {/* ── Desktop Section Heading ── */}
           <div className="hidden lg:block" style={{ marginBottom: '40px', textAlign: 'left' }}>
+            <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'15px',margin:'0 0 12px',letterSpacing:'0.06em'}}>॥ श्री वृन्दावन धाम ॥</p>
             <h2 data-aos="flip-right" data-aos-delay="500" style={{
               fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
               color: '#3A2A0E', letterSpacing: '0.1em',
@@ -81,10 +91,11 @@ const Overview = ({ setIsOpen }) => {
             <h3 style={{
               fontFamily: F_JOST, fontWeight: '500', fontSize: '14px',
               color: '#C9A96E', letterSpacing: '0.05em',
-              textTransform: 'capitalize', margin: 0,
+              textTransform: 'capitalize', margin: '0 0 14px 0',
             }}>
               NH-44, Vrindavan, Mathura
             </h3>
+            <div style={{width:'50px',height:'2px',background:'var(--red, #ed1c24)'}}></div>
           </div>
           
           {/* Paragraphs */}
@@ -178,9 +189,9 @@ const Overview = ({ setIsOpen }) => {
                     {item.label}
                   </p>
                   <p className="whitespace-normal" style={{
-                    fontFamily: F_JOST, fontSize: '13.5px', fontWeight: '700',
-                    color: '#3A2A0E', letterSpacing: '0.04em',
-                    textTransform: 'uppercase', margin: 0,
+                    fontFamily: "'Cormorant Garamond',Georgia,serif", fontSize: '22px', fontWeight: '600',
+                    color: 'var(--gold-warm, #d4a843)', letterSpacing: '0.02em',
+                    margin: 0,
                   }}>
                     {item.value}
                   </p>

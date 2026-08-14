@@ -10,9 +10,11 @@ const Footer = () => (
   <footer style={{ background: '#000000', color: '#fff' }}>
 
     <div style={{ maxWidth: '860px', margin: '0 auto', padding: '56px 24px 32px', textAlign: 'center' }}>
+      <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'16px',margin:'0 0 16px',letterSpacing:'0.08em'}}>॥ हरे कृष्ण हरे कृष्ण ॥</p>
       <h2 style={{ fontSize: '24px', fontWeight: '800', fontFamily: F_JOST, marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.05em' }} data-aos="fade-in">
         About Developer
       </h2>
+      <div className="ornament ornament-gold" style={{margin:'12px auto 16px'}}><span style={{color:'var(--gold-warm)',fontSize:'16px'}}>❋</span></div>
       <div className="flex flex-col md:flex-row items-center justify-center gap-2 mb-4">
         <span className="h-[1px] w-8 bg-[var(--color-gold-dark)] hidden md:block"></span>
         <span className="text-[var(--color-gold-dark)] text-xs md:text-sm font-bold tracking-widest uppercase text-center" style={{ fontFamily: 'var(--font-sans), Open Sans, sans-serif' }}>
