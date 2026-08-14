@@ -20,19 +20,25 @@ const AosInit = dynamic(() => import('../components/AosInit'), { ssr: false })
 import FloatStack from '../components/new/FloatStack'
 
 const exteriorImages = [
-  { src: '/images/gallery-exterior/g1.webp', alt: 'Exterior View 1', title: 'Grand Elevation' },
-  { src: '/images/gallery-exterior/g2.webp', alt: 'Exterior View 2', title: 'Lush Surroundings' },
-  { src: '/images/gallery-exterior/g3.webp', alt: 'Exterior View 3', title: 'Premium Amenities' },
-  { src: '/images/gallery-exterior/g4.webp', alt: 'Exterior View 4', title: 'Open Spaces' },
-  { src: '/images/gallery-exterior/g5.webp', alt: 'Exterior View 5', title: 'Scenic Landscapes' },
-  { src: '/images/gallery-exterior/g6.webp', alt: 'Exterior View 6', title: 'Evening View' },
+  { src: '/images/gallery-exterior/g1.webp', alt: 'Exterior View 1', title: 'Grand Entrance Gate' },
+  { src: '/images/gallery-exterior/g2.webp', alt: 'Exterior View 2', title: 'Township Arial View' },
+  { src: '/images/gallery-exterior/g3.webp', alt: 'Exterior View 3', title: 'Clubhouse & Swimming Pool' },
+  { src: '/images/gallery-exterior/g4.webp', alt: 'Exterior View 4', title: 'Pedestrian Pathways' },
+  { src: '/images/gallery-exterior/g5.webp', alt: 'Exterior View 5', title: 'Palatial Clubhouse Entrance' },
+  { src: '/images/gallery-exterior/g6.webp', alt: 'Exterior View 6', title: 'Parks & Kids Play Area' },
+  { src: '/images/gallery-exterior/g7.webp', alt: 'Exterior View 7', title: 'Yoga & Meditation Pavilion' },
+  { src: '/images/gallery-exterior/g8.webp', alt: 'Exterior View 8', title: 'Landscaped Gardens' },
+  { src: '/images/gallery-exterior/g9.webp', alt: 'Exterior View 9', title: 'Aerial Masterplan' },
 ];
 
 const interiorImages = [
-  { src: '/images/gallery-interior/i1.webp', alt: 'Interior View 1', title: 'Spacious Living Room' },
-  { src: '/images/gallery-interior/i2.webp', alt: 'Interior View 2', title: 'Elegant Bedroom' },
-  { src: '/images/gallery-interior/i3.webp', alt: 'Interior View 3', title: 'Modern Kitchen' },
-  { src: '/images/gallery-interior/i4.webp', alt: 'Interior View 4', title: 'Luxury Finishes' },
+  { src: '/images/gallery-interior/i1.webp', alt: 'Interior View 1', title: 'Indoor Games Room' },
+  { src: '/images/gallery-interior/i2.webp', alt: 'Interior View 2', title: 'Luxury Living Area' },
+  { src: '/images/gallery-interior/i3.webp', alt: 'Interior View 3', title: 'Modern Living Room' },
+  { src: '/images/gallery-interior/i4.webp', alt: 'Interior View 4', title: 'Elegant Living Space' },
+  { src: '/images/gallery-interior/i5.webp', alt: 'Interior View 5', title: 'Spacious Balcony View' },
+  { src: '/images/gallery-interior/i6.webp', alt: 'Interior View 6', title: 'Designer Lounge Area' },
+  { src: '/images/gallery-interior/i7.webp', alt: 'Interior View 7', title: 'Panoramic Skyline View' },
 ];
 
 export default function Home() {

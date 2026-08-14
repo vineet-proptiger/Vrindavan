@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { Menu, X, Phone } from 'lucide-react'
 import { logoImages } from '../lib/images'
+import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons'
 
 const NAV_TEXT = '#684C1B'
 const F_JOST   = 'var(--font-jost), Montserrat, sans-serif'
@@ -25,7 +26,7 @@ const Navbar = ({ setIsOpen }) => {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const hover   = e => (e.currentTarget.style.color = '#C9A96E')
+  const hover   = e => (e.currentTarget.style.color = '#008B8B') // Peacock feather color
   const unhover = e => (e.currentTarget.style.color = NAV_TEXT)
 
   return (
@@ -46,44 +47,49 @@ const Navbar = ({ setIsOpen }) => {
       }}>
 
         {/* Left Side: Logo and Navigation Links */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '48px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '80px' }}>
           {/* LOGO */}
           <a href="#" style={{ flexShrink: 0, display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-            <p className="devanagari" style={{ 
-              color: '#d4a843', 
-              fontSize: '24px', 
-              margin: '0', 
-              letterSpacing: '0.06em', 
-              textShadow: '0 2px 4px rgba(0,0,0,0.05)' 
-            }}>
-              ॥ श्री वृन्दावन धाम ॥
-            </p>
+            <img 
+              src={logoImages.main} 
+              alt="Vrindavan Logo" 
+              style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(1.35)', transformOrigin: 'left center' }} 
+            />
           </a>
 
           {/* NAV LINKS */}
-          <div
-            className="hidden lg:flex"
-            style={{ alignItems: 'center', gap: '28px' }}
-          >
-            <a href="#interior-masterpiece" style={aStyle} onMouseEnter={hover} onMouseLeave={unhover}>AMENITIES</a>
-            <a href="#exterior-masterpiece" style={aStyle} onMouseEnter={hover} onMouseLeave={unhover}>GALLERY</a>
-            <a href="#overview" style={aStyle} onMouseEnter={hover} onMouseLeave={unhover}>OVERVIEW</a>
-            <a href="#masterplan" style={aStyle} onMouseEnter={hover} onMouseLeave={unhover}>FLOOR PLANS</a>
-            <a href="#pricing" style={aStyle} onMouseEnter={hover} onMouseLeave={unhover}>PRICE</a>
-            <button
-              onClick={() => setIsOpen(true)}
-              style={{
-                ...aStyle,
-                background: 'none',
-                border: 'none',
-                padding: 0,
-                textAlign: 'left'
-              }}
-              onMouseEnter={hover}
-              onMouseLeave={unhover}
-            >
-              DOWNLOAD BROCHURE
-            </button>
+          <div className="hidden lg:flex" style={{ alignItems: 'center', gap: '28px' }}>
+            {[
+              { label: 'OVERVIEW', href: '#overview' },
+              { label: 'GALLERY', href: '#exterior-gallery' },
+              { label: 'PRICE', href: '#pricing' },
+              { label: 'AMENITIES', href: '#highlights' },
+              { label: 'FLOOR PLANS', href: '#masterplan' }
+            ].map((item, idx) => (
+              <div key={idx} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0px', marginTop: '4px' }}>
+                <PeacockFeatherIcon size={16} style={{ marginBottom: '-2px' }} />
+                <a href={item.href} style={aStyle} onMouseEnter={hover} onMouseLeave={unhover}>{item.label}</a>
+                <FluteIcon width={60} height={12} style={{ marginTop: '-2px' }} />
+              </div>
+            ))}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0px', marginTop: '4px' }}>
+              <PeacockFeatherIcon size={16} style={{ marginBottom: '-2px' }} />
+              <button
+                onClick={() => setIsOpen(true)}
+                style={{
+                  ...aStyle,
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                  textAlign: 'left'
+                }}
+                onMouseEnter={hover}
+                onMouseLeave={unhover}
+              >
+                DOWNLOAD BROCHURE
+              </button>
+              <FluteIcon width={60} height={12} style={{ marginTop: '-2px' }} />
+            </div>
           </div>
         </div>
 
@@ -124,11 +130,11 @@ const Navbar = ({ setIsOpen }) => {
       {mobileOpen && (
         <div style={{ background: '#fff', borderTop: '1px solid #f0f0f0' }}>
           {[
-            { label: 'AMENITIES',   href: '#interior-masterpiece' },
-            { label: 'GALLERY',     href: '#exterior-masterpiece' },
             { label: 'OVERVIEW',    href: '#overview' },
-            { label: 'FLOOR PLANS', href: '#masterplan' },
+            { label: 'GALLERY',     href: '#exterior-gallery' },
             { label: 'PRICE',       href: '#pricing' },
+            { label: 'AMENITIES',   href: '#highlights' },
+            { label: 'FLOOR PLANS', href: '#masterplan' },
             { label: 'DOWNLOAD BROCHURE', onClick: () => { setIsOpen(true); setMobileOpen(false); } },
           ].map((item, i) => {
             if (item.onClick) {

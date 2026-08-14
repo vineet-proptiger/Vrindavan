@@ -133,7 +133,7 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", id = "h
             fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
             color: '#1E6D7A', letterSpacing: '0.1em',
             textTransform: 'uppercase', margin: 0,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            textAlign: 'center',
           }}>
             {title}
           </h2>
