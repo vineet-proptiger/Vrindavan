@@ -18,7 +18,7 @@ const Footer = () => (
       <div className="flex flex-col md:flex-row items-center justify-center gap-2 mb-4">
         <span className="h-[1px] w-8 bg-[var(--color-gold-dark)] hidden md:block"></span>
         <span className="text-[var(--color-gold-dark)] text-xs md:text-sm font-bold tracking-widest uppercase text-center" style={{ fontFamily: 'var(--font-sans), Open Sans, sans-serif' }}>
-          Cozy Villas &amp; Spacious Bungalows — NH-44, Vrindavan, Mathura
+          Premium Plots — NH-44, Vrindavan, Mathura
         </span>
         <span className="h-[1px] w-8 bg-[var(--color-gold-dark)] hidden md:block"></span>
       </div>
