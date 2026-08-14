@@ -137,12 +137,12 @@ const Hero = ({ setIsOpen }) => {
 
         .hero-slider-wrapper {
           width: 100%;
-          height: 100%;
+          height: auto;
         }
         .slide-layer {
           position: relative;
           width: 100%;
-          height: 100%;
+          height: auto;
           opacity: 0;
           transition: opacity 1.2s ease-in-out;
           pointer-events: none;
@@ -258,13 +258,23 @@ const Hero = ({ setIsOpen }) => {
 
         /* ─── Mobile ─── */
         @media (max-width: 767px) {
+          @keyframes heroZoomInOutMobile {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+          }
+          
+          .desktop-hero-image {
+            animation: heroZoomInOutMobile 15s ease-in-out infinite !important;
+          }
+
           .hero-container {
             margin-top: 0px !important;
             padding-top: 80px !important;
             height: auto !important;
             display: flex !important;
             flex-direction: column !important;
-            background: #FFF9E6 !important;
+            background: transparent !important;
           }
 
           .hero-overlay {
@@ -375,13 +385,13 @@ const Hero = ({ setIsOpen }) => {
       </div>
 
       {/* ── Mobile Static Image ── */}
-      <div className="hero-slider-wrapper grid md:hidden">
-        <div className="slide-layer active" style={{ gridArea: '1 / 1 / 2 / 2' }}>
+      <div className="hero-slider-wrapper block md:hidden">
+        <div className="slide-layer active">
           <Image
             src={heroImages.smDevice}
             alt="Mobile Banner"
-            width={768}
-            height={800}
+            width={1254}
+            height={1254}
             className="hero-image desktop-hero-image"
             priority={true}
             sizes="100vw"

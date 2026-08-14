@@ -58,12 +58,12 @@ export default function Home() {
         images={exteriorImages} 
       />
       
-      <CarouselSection 
+      {/* <CarouselSection 
         setIsOpen={setIsOpen} 
         title={<><span style={{ color: 'var(--red, #ed1c24)' }}>GLIMPSES OF</span>&nbsp;THE INTERIOR MASTERPIECE</>} 
         id="interior-gallery" 
         images={interiorImages} 
-      />
+      /> */}
 
       {/* <Amenities setIsOpen={setIsOpen} /> */}
       <Pricing setIsOpen={setIsOpen} />

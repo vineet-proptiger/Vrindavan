@@ -6,6 +6,7 @@ const PRIMARY = "var(--color-primary, #3A2A0E)";
 
 const units = [
   {
+    category: "The Garden Plots",
     type: "Cozy Villa",
     size: "On Request",
     price: "1.10 Cr*",
@@ -18,6 +19,7 @@ const units = [
     ],
   },
   {
+    category: "The Estate Plots",
     type: "Spacious Bungalow",
     size: "On Request",
     price: "Price on Request",
@@ -30,6 +32,7 @@ const units = [
     ],
   },
   {
+    category: "The Signature Plots",
     type: "Duplex Villa",
     size: "On Request",
     price: "Price on Request",
@@ -98,6 +101,21 @@ const Pricing = ({ setIsOpen }) => {
             {units.map((unit, idx) => (
               <div key={idx} className="p-8 md:p-10 relative flex flex-col justify-between">
                 <div>
+                  {/* Category / Subheading */}
+                  <h4
+                    data-aos={idx % 2 === 0 ? "flip-left" : "flip-right"} data-aos-delay="400"
+                    className="mb-1 whitespace-nowrap"
+                    style={{ 
+                      fontFamily: F_SANS, 
+                      fontSize: "clamp(12px, 1.2vw, 15px)", 
+                      fontWeight: '400',
+                      color: idx === 1 ? '#e63946' : '#9E8B75', 
+                      letterSpacing: "0.15em"
+                    }}
+                  >
+                    {unit.category}
+                  </h4>
+                  
                   {/* Title & Size */}
                   <h3
                     data-aos={idx % 2 === 0 ? "flip-left" : "flip-right"} data-aos-delay="500"

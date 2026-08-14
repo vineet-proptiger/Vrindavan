@@ -36,14 +36,18 @@ const infoItems = [
 
 const Overview = ({ setIsOpen }) => {
   const [isExpanded, setIsExpanded] = useState(false)
-  
   return (
-    <section
-      id="overview"
+    <>
+      <style dangerouslySetInnerHTML={{ __html: `
+        .overview-section { padding: 32px 0 48px; margin-top: -60px; position: relative; z-index: 10; }
+        @media (min-width: 768px) { .overview-section { padding: 72px 0 80px; margin-top: 0; } }
+      `}} />
+      <section
+        id="overview"
+        className="overview-section"
       style={{ 
         scrollMarginTop: '80px', 
         background: '#fff', 
-        padding: '72px 0 80px', 
         borderBottom: '1px solid #f0ede6',
         position: 'relative',
         overflow: 'hidden',
@@ -187,17 +191,24 @@ const Overview = ({ setIsOpen }) => {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-[1px]" style={{ background: '#D5C2A8' }}>
             {infoItems.map((item, i) => (
-              <div key={i} className="flex flex-col justify-center" style={{
+              <div key={i} className="flex flex-col justify-center px-6 py-5 sm:px-3 sm:py-[18px]" style={{
                 background: item.bgColor || '#fff',
-                padding: '18px 12px',
                 textAlign: 'left',
               }}>
-                <div data-aos="fade" data-aos-delay={600 + i * 150} data-aos-duration="800">
-                  <p style={{
-                    fontFamily: F_JOST, fontSize: '11px', fontWeight: '600',
-                    color: '#9E8B75', letterSpacing: '0.06em',
-                    textTransform: 'uppercase', margin: '0 0 6px',
-                  }}>
+                <div 
+                  data-aos="fade" 
+                  data-aos-delay={600 + i * 150} 
+                  data-aos-duration="800"
+                  className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start w-full"
+                >
+                  <p 
+                    className="mb-0 sm:mb-1.5"
+                    style={{
+                      fontFamily: F_JOST, fontSize: '11px', fontWeight: '600',
+                      color: '#9E8B75', letterSpacing: '0.06em',
+                      textTransform: 'uppercase',
+                    }}
+                  >
                     {item.label}
                   </p>
                   <p className="whitespace-normal" style={{
@@ -234,6 +245,7 @@ const Overview = ({ setIsOpen }) => {
       </div>
     </div>
   </section>
+  </>
   )
 }
 

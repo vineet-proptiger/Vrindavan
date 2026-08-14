@@ -63,7 +63,7 @@ const Navbar = ({ setIsOpen }) => {
               { label: 'OVERVIEW', href: '#overview' },
               { label: 'GALLERY', href: '#exterior-gallery' },
               { label: 'PRICE', href: '#pricing' },
-              { label: 'AMENITIES', href: '#highlights' },
+              /* { label: 'AMENITIES', href: '#interior-gallery' }, */
               { label: 'FLOOR PLANS', href: '#masterplan' }
             ].map((item, idx) => (
               <div key={idx} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0px', marginTop: '4px' }}>
@@ -133,7 +133,7 @@ const Navbar = ({ setIsOpen }) => {
             { label: 'OVERVIEW',    href: '#overview' },
             { label: 'GALLERY',     href: '#exterior-gallery' },
             { label: 'PRICE',       href: '#pricing' },
-            { label: 'AMENITIES',   href: '#highlights' },
+            /* { label: 'AMENITIES',   href: '#interior-gallery' }, */
             { label: 'FLOOR PLANS', href: '#masterplan' },
             { label: 'DOWNLOAD BROCHURE', onClick: () => { setIsOpen(true); setMobileOpen(false); } },
           ].map((item, i) => {
