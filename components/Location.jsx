@@ -90,7 +90,7 @@ const Location = () => {
               background: '#EAE5DC'
             }}>
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d7070.675458989901!2d77.582688!3d27.614055!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDM2JzUwLjYiTiA3N8KwMzUnMDcuMCJF!5e0!3m2!1sen!2sin!4v1786641476264!5m2!1sen!2sin" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3535.376806436367!2d77.58636829999999!3d27.6128443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39736d84f301d387%3A0xafcd6d7dac79c151!2sHero%20Homes%20-%20Vrindavan!5e0!3m2!1sen!2sin!4v1786696472902!5m2!1sen!2sin" 
                 style={{ border: 0, position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
                 allowFullScreen="" 
                 loading="lazy" 

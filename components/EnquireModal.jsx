@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { X } from 'lucide-react'
 import LeadForm from './LeadForm'
 import { logoImages } from '../lib/images'
+import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons'
 
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
@@ -69,9 +70,23 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
                   Book A Free <span style={{ color: 'var(--red, #ed1c24)' }}>Site Visit</span>
                 </h3>
               </div>
-              <p className="devanagari text-center mt-0.5" style={{ color: 'var(--gold-warm, #d4a843)', fontSize: '16px', margin: '0', letterSpacing: '0.06em' }}>
-                ॥ हरे कृष्ण हरे कृष्ण ॥
-              </p>
+              <div className="flex items-center justify-center gap-2 mt-1">
+                {/* Left Icon Group (Flipped) */}
+                <div style={{ position: 'relative', width: '40px', height: '20px', transform: 'scaleX(-1)' }}>
+                  <FluteIcon width={40} height={12} style={{ position: 'absolute', bottom: 0, left: 0 }} />
+                  <PeacockFeatherIcon size={16} style={{ position: 'absolute', top: '-6px', left: '16px', zIndex: 2, transform: 'rotate(15deg)' }} />
+                </div>
+                
+                <p className="devanagari text-center" style={{ color: 'var(--gold-warm, #d4a843)', fontSize: '16px', margin: '0', letterSpacing: '0.06em' }}>
+                  ॥ हरे कृष्ण हरे कृष्ण ॥
+                </p>
+                
+                {/* Right Icon Group */}
+                <div style={{ position: 'relative', width: '40px', height: '20px' }}>
+                  <FluteIcon width={40} height={12} style={{ position: 'absolute', bottom: 0, left: 0 }} />
+                  <PeacockFeatherIcon size={16} style={{ position: 'absolute', top: '-6px', left: '16px', zIndex: 2, transform: 'rotate(15deg)' }} />
+                </div>
+              </div>
             </div>
 
             {/* Trust Badges / USPs */}
