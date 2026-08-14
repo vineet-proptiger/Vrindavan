@@ -90,7 +90,7 @@ const Pricing = ({ setIsOpen }) => {
 
         {/* COMBINED PRICING BLOCK */}
         <div 
-          className="relative bg-white border border-[#D5C2A8] max-w-4xl mx-auto overflow-hidden"
+          className="relative bg-white border border-[#D5C2A8] max-w-5xl mx-auto overflow-hidden"
           data-aos="fade-up"
           data-aos-delay="100"
         >
