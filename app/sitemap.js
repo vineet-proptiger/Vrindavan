@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const base = 'https://mahindramahalunge.co.in'
+  const base = 'https://kbplotsvrindavan.com'
 
   return [
     {

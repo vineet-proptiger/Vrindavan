@@ -396,7 +396,7 @@ const Hero = ({ setIsOpen }) => {
       <div className="hero-content">
         <>
             <h1 className="hero-title" data-aos="zoom-in-up" data-aos-delay="0">
-             Mahindra Mahalunge
+             Hero Homes Plots in Vrindavan
             </h1>
 
             <p className="hero-subtitle" data-aos="fade-right" data-aos-delay="100">

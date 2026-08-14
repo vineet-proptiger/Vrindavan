@@ -144,7 +144,7 @@ const Highlights = ({ setIsOpen }) => (
           textTransform: 'uppercase', margin: 0,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>
-          Designed for Comfort, Wellness &amp; Leisure At Mahindra Mahalunge
+          Designed for Comfort, Wellness &amp; Leisure At Hero Homes Plots in Vrindavan
         </h2>
       </div>
 

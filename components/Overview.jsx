@@ -52,7 +52,7 @@ const Overview = ({ setIsOpen }) => {
           textTransform: 'uppercase', margin: '0 0 10px 0',
           display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '10px'
         }}>
-          Welcome to Mahindra Mahalunge
+          Welcome to Hero Homes Plots in Vrindavan
         </h2>
         <h3 style={{
           fontFamily: F_JOST, fontWeight: '500', fontSize: '14px',
@@ -76,7 +76,7 @@ const Overview = ({ setIsOpen }) => {
               textTransform: 'uppercase', margin: '0 0 10px 0',
               display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '10px'
             }}>
-              Welcome to Mahindra Mahalunge
+              Welcome to Hero Homes Plots in Vrindavan
             </h2>
             <h3 style={{
               fontFamily: F_JOST, fontWeight: '500', fontSize: '14px',
