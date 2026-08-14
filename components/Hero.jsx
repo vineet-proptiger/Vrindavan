@@ -160,7 +160,7 @@ const Hero = ({ setIsOpen }) => {
 
         @keyframes heroZoomInOut {
           0% { transform: scale(1); }
-          50% { transform: scale(1.1); }
+          50% { transform: scale(1.02); }
           100% { transform: scale(1); }
         }
 
