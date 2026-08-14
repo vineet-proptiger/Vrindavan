@@ -59,20 +59,19 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
           <div className="px-4 sm:px-7 pb-4 sm:pb-7 pt-2 sm:pt-3 flex flex-col justify-center flex-1 relative">
             
             {/* Header - Logo on top, Title below */}
-            <div className="flex flex-col items-center justify-center gap-2 mb-3 sm:mb-4 border-b border-gray-100 pb-3 sm:pb-3.5 mt-0">
-              <div className="flex items-center justify-center h-[76px] sm:h-[86px] shrink-0 w-full">
-                <p className="devanagari text-center" style={{ color: '#d4a843', fontSize: '26px', margin: '0', letterSpacing: '0.06em', textShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-                  ॥ श्री वृन्दावन धाम ॥
-                </p>
-              </div>
-              <div className="flex items-center text-center mt-0.5">
+            <div className="flex flex-col items-center justify-center mb-3 sm:mb-4 border-b border-gray-100 pb-2 sm:pb-3 mt-1">
+              <div className="ornament" style={{ marginBottom: '6px' }}><span className="feather">❋</span></div>
+              <div className="flex items-center text-center">
                 <h3 
-                  className="text-[15px] sm:text-[16px] text-center font-bold text-gray-800 tracking-[0.5px] sm:tracking-[1px] uppercase leading-tight" 
-                  style={{ fontFamily: F_JOST }}
+                  className="text-[16px] sm:text-[18px] text-center font-bold tracking-[0.5px] sm:tracking-[1px] uppercase leading-tight" 
+                  style={{ fontFamily: F_JOST, margin: 0, color: '#1E6D7A' }}
                 >
-                  Book A Free <span className="text-[var(--color-gold)]">Site Visit</span>
+                  Book A Free <span style={{ color: 'var(--red, #ed1c24)' }}>Site Visit</span>
                 </h3>
               </div>
+              <p className="devanagari text-center mt-0.5" style={{ color: 'var(--gold-warm, #d4a843)', fontSize: '16px', margin: '0', letterSpacing: '0.06em' }}>
+                ॥ हरे कृष्ण हरे कृष्ण ॥
+              </p>
             </div>
 
             {/* Trust Badges / USPs */}

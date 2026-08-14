@@ -27,14 +27,15 @@ const MasterPlan = ({ setIsOpen }) => {
 
         {/* Section Header */}
         <div style={{ textAlign: 'center', marginBottom: '40px' }} data-aos="fade-up">
+          <div className="ornament"><span className="feather">❋</span></div>
           <h2 style={{
             fontFamily: "var(--font-jost), Montserrat, sans-serif", fontWeight: '700', fontSize: '17px',
-            color: '#684C1B', letterSpacing: '0.1em',
+            color: '#1E6D7A', letterSpacing: '0.1em',
             textTransform: 'uppercase', margin: 0,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
-            Floor Plans &amp; Layout
+            <span style={{ color: 'var(--red, #ed1c24)' }}>Floor Plans</span>&nbsp;&amp; Layout
           </h2>
+          <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ नक्शा ॥</p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-6 items-stretch">

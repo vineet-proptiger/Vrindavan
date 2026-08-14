@@ -182,11 +182,11 @@ const AboutDeveloper = ({ setIsOpen }) => (
         <div className="ornament"><span className="feather">❋</span></div>
         <h2 style={{
           fontFamily: "var(--font-jost), Montserrat, sans-serif", fontWeight: '700', fontSize: '17px',
-          color: '#684C1B', letterSpacing: '0.1em',
+          color: '#1E6D7A', letterSpacing: '0.1em',
           textTransform: 'uppercase', margin: 0,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>
-          Need Assistance?
+          <span style={{ color: 'var(--red, #ed1c24)' }}>Need</span>&nbsp;Assistance?
         </h2>
         <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ सेवा सहायता ॥</p>
       </div>

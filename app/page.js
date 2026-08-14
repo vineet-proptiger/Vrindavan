@@ -17,7 +17,7 @@ const AboutDeveloper = dynamic(() => import('../components/AboutDeveloper'), { s
 const Footer = dynamic(() => import('../components/Footer'), { ssr: true })
 const EnquireModal = dynamic(() => import('../components/EnquireModal'), { ssr: false })
 const AosInit = dynamic(() => import('../components/AosInit'), { ssr: false })
-const FloatStack = dynamic(() => import('../components/new/FloatStack'), { ssr: false })
+import FloatStack from '../components/new/FloatStack'
 
 const exteriorImages = [
   { src: '/images/gallery-exterior/g1.webp', alt: 'Exterior View 1', title: 'Grand Elevation' },
@@ -47,19 +47,19 @@ export default function Home() {
       
       <CarouselSection 
         setIsOpen={setIsOpen} 
-        title="GLIMPSES OF THE EXTERIOR MASTERPIECE" 
+        title={<><span style={{ color: 'var(--red, #ed1c24)' }}>GLIMPSES OF</span>&nbsp;THE EXTERIOR MASTERPIECE</>} 
         id="exterior-gallery" 
         images={exteriorImages} 
       />
       
       <CarouselSection 
         setIsOpen={setIsOpen} 
-        title="GLIMPSES OF THE INTERIOR MASTERPIECE" 
+        title={<><span style={{ color: 'var(--red, #ed1c24)' }}>GLIMPSES OF</span>&nbsp;THE INTERIOR MASTERPIECE</>} 
         id="interior-gallery" 
         images={interiorImages} 
       />
 
-      <Amenities setIsOpen={setIsOpen} />
+      {/* <Amenities setIsOpen={setIsOpen} /> */}
       <Pricing setIsOpen={setIsOpen} />
       <Highlights setIsOpen={setIsOpen} />
       
@@ -68,6 +68,17 @@ export default function Home() {
       <AboutDeveloper setIsOpen={setIsOpen} />
       <Footer />
       <EnquireModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      
+      {/* Floating Vertical Enquire Tab — Desktop only */}
+      <div 
+        className="btn-floating-tab hidden lg:flex"
+        onClick={() => setIsOpen(true)}
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'rotate(90deg)' }}>
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+        ENQUIRE NOW
+      </div>
       
       {/* Sticky Bottom Bar for Mobile */}
       <FloatStack setIsOpen={setIsOpen} />

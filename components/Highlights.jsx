@@ -49,87 +49,51 @@ const CurvedCorners = ({ bg = BG }) => {
   ))
 }
 
-/* SVG icons */
-const IconBuilding = () => (
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
-    stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M3 21h18" />
-    <path d="M5 21V7l7-4 7 4v14" />
-    <path d="M9 21v-4h6v4" />
-    <rect x="2" y="9" width="3" height="8" rx="1" />
-    <rect x="19" y="9" width="3" height="8" rx="1" />
-  </svg>
-)
-const IconTrees = () => (
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
-    stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 22V12" />
-    <path d="M7 12l5-5 5 5" />
-    <path d="M5 17l7-7 7 7" />
-  </svg>
-)
-const IconHome = () => (
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
-    stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-    <polyline points="9 22 9 12 15 12 15 22" />
-  </svg>
-)
-const IconSmart = () => (
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
-    stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="3" width="20" height="14" rx="2" />
-    <path d="M8 21h8M12 17v4" />
-    <path d="M9 9l2 2 4-4" />
-  </svg>
-)
-const IconMountain = () => (
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
-    stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M8 3l4 8 5-5 5 15H2L8 3z" />
-  </svg>
-)
-const IconSunCloud = () => (
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
-    stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-    <path d="M16 12a4 4 0 0 0-8 0" />
-    <path d="M5 18a4 4 0 0 1 3.5-3.9 6 6 0 0 1 11-.1 4 4 0 0 1-2.5 7.9H8a4 4 0 0 1-3-4" />
-  </svg>
-)
-const IconWind = () => (
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
-    stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2" />
-  </svg>
-)
-const IconLightning = () => (
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
-    stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-  </svg>
-)
-const IconWaves = () => (
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
-    stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
-  </svg>
-)
-const IconMapPin = () => (
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
-    stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-    <circle cx="12" cy="10" r="3" />
-  </svg>
-)
+import { Landmark, TrendingUp, Plane, HardHat, ShieldCheck, Users } from 'lucide-react'
 
 const highlights = [
-  { title: 'EXPANSIVE 14 ACRES', desc: 'A majestic estate spread across 14 acres of prime land offering a lush verdant neighbourhood.', Icon: IconTrees },
-  { title: 'SCENIC RIVER VIEWS', desc: 'Mesmerising views of the Mula River ensuring a serene and tranquil living experience.', Icon: IconWaves },
-  { title: 'LUXURY VILLAS & BUNGALOWS', desc: 'Spacious and meticulously designed luxury villas spread across majestic green open spaces.', Icon: IconBuilding },
-  { title: 'ELITE AMENITIES', desc: 'Thoughtfully curated amenities including a clubhouse, swimming pool, gymnasium, and amphitheatre.', Icon: IconSmart },
-  { title: 'HOLISTIC WELLNESS', desc: 'Dedicated zones for wellness including a yoga area, jogging tracks, and beautifully landscaped gardens.', Icon: IconSunCloud },
-  { title: 'PRIME BANER NX LOCATION', desc: 'Strategically located in NH-44, Vrindavan, Mathura with seamless connectivity to Hinjewadi IT Park and major highways.', Icon: IconMapPin },
+  { 
+    title: 'Banke Bihari Corridor — ₹500 Cr', 
+    desc: 'UP Govt\'s ambitious development covers 5–5.5 acres around the temple, improving infrastructure — comparable to Kashi Vishwanath Corridor.', 
+    Icon: Landmark,
+    tag: 'ACTIVE DEVELOPMENT',
+    tagColor: '#2F855A'
+  },
+  { 
+    title: 'Land Prices Up 5× in a Decade', 
+    desc: 'Vrindavan plot prices have appreciated nearly 5 times over the last 10 years, with 15–25% annual returns in 2025–26, outperforming most cities.', 
+    Icon: TrendingUp,
+    tag: 'INVESTMENT DATA',
+    tagColor: '#D69E2E'
+  },
+  { 
+    title: 'Jewar Airport & Connectivity', 
+    desc: 'Noida International Airport (Jewar) is just 1.5 hours from Vrindavan. Combined with Yamuna Expressway, buyers reach with unmatched ease.', 
+    Icon: Plane,
+    tag: 'INFRASTRUCTURE',
+    tagColor: '#3182CE'
+  },
+  { 
+    title: '₹30,000 Cr Braj Master Plan', 
+    desc: 'Massive infrastructure plan includes roads, heritage conservation, and urban development — acknowledging demand with upward circle-rate revision.', 
+    Icon: HardHat,
+    tag: 'GOVERNMENT BACKED',
+    tagColor: '#E53E3E'
+  },
+  { 
+    title: '100% MVDA Approved Plots', 
+    desc: 'Secure your future with 100% MVDA approved residential plots and townships. Experience a perfect blend where spiritual living meets smart investment.', 
+    Icon: ShieldCheck,
+    tag: 'VERIFIED ASSET',
+    tagColor: '#2F855A'
+  },
+  { 
+    title: 'A Trusted Legacy of 10+ Years', 
+    desc: 'Backed by 10+ years of trust in Vrindavan real estate, having delivered 5L+ sq. yards to over 3,000 happy families and investors with transparency.', 
+    Icon: Users,
+    tag: 'PROVEN RECORD',
+    tagColor: '#D69E2E'
+  },
 ]
 
 const Highlights = ({ setIsOpen }) => (
@@ -141,11 +105,11 @@ const Highlights = ({ setIsOpen }) => (
         <div className="ornament"><span className="feather">❋</span></div>
         <h2 data-aos="flip-left" data-aos-delay="300" style={{
           fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
-          color: '#684C1B', letterSpacing: '0.1em',
+          color: '#1E6D7A', letterSpacing: '0.1em',
           textTransform: 'uppercase', margin: 0,
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          display: 'block',
         }}>
-          Designed for Comfort, Wellness &amp; Leisure At Hero Homes Plots in Vrindavan
+          <span style={{ color: 'var(--red, #ed1c24)' }}>Designed for Comfort,</span>&nbsp;Wellness &amp; Leisure At Hero Homes Plots in Vrindavan
         </h2>
         <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ सुख सुविधा ॥</p>
       </div>
@@ -161,37 +125,58 @@ const Highlights = ({ setIsOpen }) => (
         <CurvedCorners bg={BG} />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[1px]" style={{ background: BORDER_COLOR }}>
-          {highlights.map(({ title, desc, Icon }, i) => (
+          {highlights.map(({ title, desc, Icon, tag, tagColor }, i) => (
             <div key={i} data-aos="flip-left" data-aos-delay={i * 100} style={{
               padding: '36px 20px 28px',
               textAlign: 'center',
               background: BG,
+              display: 'flex', flexDirection: 'column', alignItems: 'center'
             }}>
-              {/* Dark red circle */}
+              {/* Dark red circle with Lucide Icon */}
               <div style={{
-                width: '80px', height: '80px', borderRadius: '50%',
+                width: '70px', height: '70px', borderRadius: '50%',
                 background: 'var(--color-brand)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 margin: '0 auto 24px',
                 transition: 'all 0.3s ease',
                 boxShadow: '0 0 0 4px rgba(212,168,67,0.12)'
               }}>
-                <Icon />
+                <Icon color="#ffffff" size={32} strokeWidth={1.5} />
               </div>
 
               {/* Title */}
               <h3 style={{
-                fontFamily: F_JOST, fontSize: '12.5px', fontWeight: '700',
+                fontFamily: F_JOST, fontSize: '13.5px', fontWeight: '700',
                 color: '#3A2A0E', letterSpacing: '0.1em',
                 textTransform: 'uppercase', margin: '0 0 12px',
+                minHeight: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center'
               }}>{title}</h3>
 
               {/* Description */}
               <p style={{
                 fontFamily: F_SANS, fontSize: '13px',
                 color: '#4A4540',
-                lineHeight: 1.65, margin: 0,
+                lineHeight: 1.65, margin: '0 0 20px',
+                flexGrow: 1
               }}>{desc}</p>
+
+              {/* Tag */}
+              {tag && (
+                <div style={{
+                  display: 'inline-block',
+                  background: `${tagColor}1A`, // 10% opacity
+                  color: tagColor,
+                  padding: '6px 12px',
+                  borderRadius: '100px',
+                  fontSize: '10.5px',
+                  fontWeight: '700',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  fontFamily: F_SANS
+                }}>
+                  {tag}
+                </div>
+              )}
             </div>
           ))}
         </div>

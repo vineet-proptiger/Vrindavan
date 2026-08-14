@@ -76,11 +76,11 @@ const Pricing = ({ setIsOpen }) => {
           <div className="ornament"><span className="feather">❋</span></div>
           <h2 data-aos="flip-left" data-aos-delay="500" style={{
             fontFamily: "var(--font-jost), Montserrat, sans-serif", fontWeight: '700', fontSize: '17px',
-            color: '#684C1B', letterSpacing: '0.1em',
+            color: '#1E6D7A', letterSpacing: '0.1em',
             textTransform: 'uppercase', margin: 0,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
-            Configurations &amp; Pricing
+            <span style={{ color: 'var(--red, #ed1c24)' }}>Configurations &amp;</span>&nbsp;Pricing
           </h2>
           <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ अपना घर अपना धाम ॥</p>
         </div>
@@ -102,7 +102,7 @@ const Pricing = ({ setIsOpen }) => {
                   <h3
                     data-aos={idx % 2 === 0 ? "flip-left" : "flip-right"} data-aos-delay="500"
                     className="font-bold mb-2 whitespace-nowrap"
-                    style={{ fontFamily: F_SANS, fontSize: "clamp(17px, 1.6vw, 24px)", color: "#000000", letterSpacing: "0.01em" }}
+                    style={{ fontFamily: F_SANS, fontSize: "clamp(17px, 1.6vw, 24px)", color: "#1E6D7A", letterSpacing: "0.01em" }}
                   >
                     {unit.type}
                   </h3>

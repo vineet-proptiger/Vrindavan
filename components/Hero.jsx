@@ -378,7 +378,7 @@ const Hero = ({ setIsOpen }) => {
       <div className="hero-slider-wrapper grid md:hidden">
         <div className="slide-layer active" style={{ gridArea: '1 / 1 / 2 / 2' }}>
           <Image
-            src={heroImages.banner}
+            src={heroImages.smDevice}
             alt="Mobile Banner"
             width={768}
             height={800}

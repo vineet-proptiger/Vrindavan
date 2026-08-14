@@ -49,18 +49,33 @@ const Overview = ({ setIsOpen }) => {
         overflow: 'hidden',
       }}
     >
-      <div className="container mx-auto px-4 sm:px-8 max-w-[1200px]">
+      {/* Image Background */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        backgroundImage: "url('/images/about/about.webp')",
+        backgroundPosition: 'center center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        opacity: 0.15,
+        pointerEvents: 'none',
+        zIndex: 0,
+      }} />
+      <div className="container mx-auto px-4 sm:px-8 max-w-[1200px]" style={{ position: 'relative', zIndex: 1 }}>
+        <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+          <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'16px',margin:'0 0 16px',letterSpacing:'0.08em'}}>॥ श्री राधे राधे ॥</p>
+          <div className="ornament"><span className="feather">❋</span></div>
+        </div>
       
       {/* ── Mobile Section Heading ── */}
       <div className="block lg:hidden" style={{ marginBottom: '32px', textAlign: 'left' }}>
         <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'15px',margin:'0 0 12px',letterSpacing:'0.06em'}}>॥ श्री वृन्दावन धाम ॥</p>
         <h2 data-aos="flip-right" data-aos-delay="500" style={{
           fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
-          color: '#3A2A0E', letterSpacing: '0.1em',
+          color: '#1E6D7A', letterSpacing: '0.1em',
           textTransform: 'uppercase', margin: '0 0 10px 0',
-          display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '10px'
         }}>
-          Welcome to Hero Homes Plots in Vrindavan
+          <span style={{ color: 'var(--red, #ed1c24)' }}>Welcome to</span>&nbsp;Hero Homes Plots in Vrindavan
         </h2>
         <h3 style={{
           fontFamily: F_JOST, fontWeight: '500', fontSize: '14px',
@@ -69,7 +84,6 @@ const Overview = ({ setIsOpen }) => {
         }}>
           NH-44, Vrindavan, Mathura
         </h3>
-        <div style={{width:'50px',height:'2px',background:'var(--red, #ed1c24)'}}></div>
       </div>
 
       <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-14">
@@ -82,11 +96,10 @@ const Overview = ({ setIsOpen }) => {
             <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'15px',margin:'0 0 12px',letterSpacing:'0.06em'}}>॥ श्री वृन्दावन धाम ॥</p>
             <h2 data-aos="flip-right" data-aos-delay="500" style={{
               fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
-              color: '#3A2A0E', letterSpacing: '0.1em',
+              color: '#1E6D7A', letterSpacing: '0.1em',
               textTransform: 'uppercase', margin: '0 0 10px 0',
-              display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '10px'
-            }}>
-              Welcome to Hero Homes Plots in Vrindavan
+        }}>
+              <span style={{ color: 'var(--red, #ed1c24)' }}>Welcome to</span>&nbsp;Hero Homes Plots in Vrindavan
             </h2>
             <h3 style={{
               fontFamily: F_JOST, fontWeight: '500', fontSize: '14px',
@@ -95,7 +108,6 @@ const Overview = ({ setIsOpen }) => {
             }}>
               NH-44, Vrindavan, Mathura
             </h3>
-            <div style={{width:'50px',height:'2px',background:'var(--red, #ed1c24)'}}></div>
           </div>
           
           {/* Paragraphs */}
@@ -189,9 +201,9 @@ const Overview = ({ setIsOpen }) => {
                     {item.label}
                   </p>
                   <p className="whitespace-normal" style={{
-                    fontFamily: "'Cormorant Garamond',Georgia,serif", fontSize: '22px', fontWeight: '600',
-                    color: 'var(--gold-warm, #d4a843)', letterSpacing: '0.02em',
-                    margin: 0,
+                    fontFamily: F_JOST, fontSize: '13.5px', fontWeight: '700',
+                    color: '#3A2A0E', letterSpacing: '0.04em',
+                    textTransform: 'uppercase', margin: 0,
                   }}>
                     {item.value}
                   </p>

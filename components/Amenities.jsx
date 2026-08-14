@@ -41,13 +41,14 @@ const Amenities = () => {
 
         {/* Section Header */}
         <div style={{ marginBottom: '40px', textAlign: 'center' }} data-aos="fade-up">
+          <div className="ornament"><span className="feather">❋</span></div>
           <h2 style={{
             fontFamily: F_JOST, fontWeight: '700', fontSize: '18px',
-            color: '#684C1B', letterSpacing: '0.1em', textTransform: 'uppercase', margin: 0,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            color: '#1E6D7A', letterSpacing: '0.1em', textTransform: 'uppercase', margin: 0,
           }}>
-            LIFESTYLE AMENITIES – Experience More Every Day
+            <span style={{ color: 'var(--red, #ed1c24)' }}>LIFESTYLE AMENITIES</span>&nbsp;– Experience More Every Day
           </h2>
+          <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ सुख सुविधा ॥</p>
         </div>
 
         {/* Grid Container */}

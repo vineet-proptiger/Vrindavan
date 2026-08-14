@@ -598,25 +598,8 @@
     box-shadow: 0 4px 32px rgba(0, 0, 0, 0.06);
   }
 
-  /* ══ BUTTON CONCAVE NOTCH DESIGN ══ */
-  .btn-gold, .btn-gold-outline, .btn-primary, .btn-brand, .btn-floating-tab {
-    border-radius: 0 !important;
-    -webkit-mask: 
-      radial-gradient(circle at 0 0, transparent 6px, black 6.5px) top left,
-      radial-gradient(circle at 100% 0, transparent 6px, black 6.5px) top right,
-      radial-gradient(circle at 0 100%, transparent 6px, black 6.5px) bottom left,
-      radial-gradient(circle at 100% 100%, transparent 6px, black 6.5px) bottom right;
-    -webkit-mask-size: 51% 51%;
-    -webkit-mask-repeat: no-repeat;
-    mask: 
-      radial-gradient(circle at 0 0, transparent 6px, black 6.5px) top left,
-      radial-gradient(circle at 100% 0, transparent 6px, black 6.5px) top right,
-      radial-gradient(circle at 0 100%, transparent 6px, black 6.5px) bottom left,
-      radial-gradient(circle at 100% 100%, transparent 6px, black 6.5px) bottom right;
-    mask-size: 51% 51%;
-    mask-repeat: no-repeat;
-  }
-
+  /* Removed FLOATING TAB CONCAVE NOTCH DESIGN to match other buttons */
+  
   /* Remove box-shadow because mask clips it. Avoid drop-shadow due to iOS Safari rendering bug. */
   .btn-gold, .btn-primary {
     box-shadow: none !important;
@@ -1045,3 +1028,34 @@ nav.fixed {
     .amen-row .num{font-size:18px;}
     .amen-row .tag{font-size:12px;}
   }
+
+/* Override all primary buttons to match requested Red Flat Design */
+.btn-gold, .btn-brand, .btn-primary, .btn-gold-outline, .btn-cta, .ripple-btn, .btn-floating-tab {
+  background: #c8102e !important;
+  color: #ffffff !important;
+  border: 1px solid #c8102e !important;
+  border-radius: 8px !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  box-shadow: none !important;
+  animation: none !important;
+  letter-spacing: 0.05em !important;
+  padding: 11px 24px !important;
+  font-family: var(--font-jost), 'Montserrat', sans-serif !important;
+}
+
+/* Fix padding for vertical tab since the global override breaks its dimensions */
+.btn-floating-tab {
+  padding: 18px 12px !important;
+}
+
+.btn-gold:hover, .btn-brand:hover, .btn-primary:hover, .btn-gold-outline:hover, .btn-cta:hover, .ripple-btn:hover, .btn-floating-tab:hover {
+  background: #ffffff !important;
+  color: #c8102e !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(200, 16, 46, 0.25) !important;
+}
+
+.btn-gold::before, .btn-brand::before, .btn-primary::before, .btn-gold-outline::before, .btn-floating-tab::before {
+  display: none !important;
+}

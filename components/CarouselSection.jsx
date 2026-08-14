@@ -131,7 +131,7 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", id = "h
           <div className="ornament"><span className="feather">❋</span></div>
           <h2 style={{
             fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
-            color: '#684C1B', letterSpacing: '0.1em',
+            color: '#1E6D7A', letterSpacing: '0.1em',
             textTransform: 'uppercase', margin: 0,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>

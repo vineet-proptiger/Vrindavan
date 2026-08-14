@@ -12,7 +12,7 @@ export default function QuickChat() {
         <div className="px-4" style={{ marginBottom: '40px', textAlign: 'center' }} data-aos="fade-up">
           <h2 style={{
             fontFamily: F_JOST, fontWeight: '700', fontSize: '18px',
-            color: '#684C1B', letterSpacing: '0.1em', textTransform: 'uppercase', margin: 0,
+            color: '#1E6D7A', letterSpacing: '0.1em', textTransform: 'uppercase', margin: 0,
             display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap'
           }}>
             QUICK CONNECT — Reply in one tap on WhatsApp
