@@ -187,7 +187,9 @@ const AboutDeveloper = ({ setIsOpen }) => (
           textTransform: 'capitalize', margin: 0,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>
+          <span className="heading-stick" style={{ color: '#1E6D7A', fontWeight: '800', marginRight: '10px' }}>||</span>
           <span style={{ color: 'var(--red, #ed1c24)' }}>Need</span>&nbsp;Assistance?
+          <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '10px' }}>||</span>
         </h2>
         <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ सेवा सहायता ॥</p>
       </div>
