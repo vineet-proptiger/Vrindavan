@@ -50,6 +50,7 @@ const CurvedCorners = ({ bg = BG }) => {
 }
 
 import { Landmark, TrendingUp, Plane, HardHat, ShieldCheck, Users } from 'lucide-react'
+import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons';
 
 const highlights = [
   { 
@@ -112,10 +113,12 @@ const Highlights = ({ setIsOpen }) => (
         <h2 data-aos="flip-left" data-aos-delay="300" style={{
           fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
           color: '#1E6D7A', letterSpacing: '0.1em',
-          textTransform: 'uppercase', margin: 0,
+          textTransform: 'capitalize', margin: 0,
           display: 'block',
         }}>
-          <span style={{ color: 'var(--red, #ed1c24)' }}>Designed for Comfort,</span>&nbsp;Wellness &amp; Leisure At Hero Homes Plots in Vrindavan
+          <span className="heading-stick" style={{ color: '#1E6D7A', fontWeight: '800', marginRight: '10px' }}>||</span>
+          <span style={{ color: 'var(--red, #ed1c24)' }}>Designed for Comfort,</span>&nbsp;Wellness &amp; Leisure 
+          <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '10px' }}>||</span>
         </h2>
         <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ सुख सुविधा ॥</p>
       </div>

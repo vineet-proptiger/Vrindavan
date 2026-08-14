@@ -1,6 +1,7 @@
 'use client' 
 import { useState } from 'react'
 import Image from 'next/image'
+import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons';
 
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
@@ -27,10 +28,12 @@ const Location = () => {
            <div className="ornament"><span className="feather">❋</span></div>
            <h2 style={{
              fontFamily: F_JOST, fontWeight: '700', fontSize: '18px',
-             color: '#1E6D7A', letterSpacing: '0.1em', textTransform: 'uppercase', margin: 0,
+             color: '#1E6D7A', letterSpacing: '0.1em', textTransform: 'capitalize', margin: 0,
              display: 'flex', alignItems: 'center', justifyContent: 'center',
            }}>
-             <span style={{ color: 'var(--red, #ed1c24)' }}>LOCATION</span>&nbsp;ADVANTAGES
+             <span className="heading-stick" style={{ color: '#1E6D7A', fontWeight: '800', marginRight: '10px' }}>||</span>
+             <span style={{ color: 'var(--red, #ed1c24)' }}>Location</span>&nbsp;Advantages
+             <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '10px' }}>||</span>
            </h2>
            <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ स्थान लाभ ॥</p>
         </div>

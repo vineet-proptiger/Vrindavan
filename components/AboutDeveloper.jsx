@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { PROJECT_ID, PROJECT_NAME, API_ENDPOINT, SHEET_NAME, SECRET_KEY, CITY_DISPLAY } from '../lib/config'
 import { buildTrackingFields } from '../lib/formMeta'
+import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons';
 
 const GOLD = 'var(--color-gold)'
 const GOLD_DARK = 'var(--color-gold-dark)'
@@ -183,7 +184,7 @@ const AboutDeveloper = ({ setIsOpen }) => (
         <h2 style={{
           fontFamily: "var(--font-jost), Montserrat, sans-serif", fontWeight: '700', fontSize: '17px',
           color: '#1E6D7A', letterSpacing: '0.1em',
-          textTransform: 'uppercase', margin: 0,
+          textTransform: 'capitalize', margin: 0,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>
           <span style={{ color: 'var(--red, #ed1c24)' }}>Need</span>&nbsp;Assistance?

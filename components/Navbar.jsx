@@ -63,6 +63,7 @@ const Navbar = ({ setIsOpen }) => {
               { label: 'OVERVIEW', href: '#overview' },
               { label: 'GALLERY', href: '#exterior-gallery' },
               { label: 'PRICE', href: '#pricing' },
+              { label: 'HIGHLIGHTS', href: '#highlights' },
               /* { label: 'AMENITIES', href: '#interior-gallery' }, */
               { label: 'FLOOR PLANS', href: '#masterplan' }
             ].map((item, idx) => (
@@ -133,6 +134,7 @@ const Navbar = ({ setIsOpen }) => {
             { label: 'OVERVIEW',    href: '#overview' },
             { label: 'GALLERY',     href: '#exterior-gallery' },
             { label: 'PRICE',       href: '#pricing' },
+            { label: 'HIGHLIGHTS',  href: '#highlights' },
             /* { label: 'AMENITIES',   href: '#interior-gallery' }, */
             { label: 'FLOOR PLANS', href: '#masterplan' },
             { label: 'DOWNLOAD BROCHURE', onClick: () => { setIsOpen(true); setMobileOpen(false); } },
@@ -149,7 +151,11 @@ const Navbar = ({ setIsOpen }) => {
                     letterSpacing: '0.06em', cursor: 'pointer'
                   }}
                 >
-                  {item.label}
+                  <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '2px' }}>
+                    <PeacockFeatherIcon size={16} style={{ marginBottom: '-2px' }} />
+                    <span>{item.label}</span>
+                    <FluteIcon width={60} height={12} style={{ marginTop: '-2px' }} />
+                  </div>
                 </button>
               )
             }
@@ -162,7 +168,13 @@ const Navbar = ({ setIsOpen }) => {
                   color: NAV_TEXT, borderBottom: '1px solid #f5f5f5',
                   letterSpacing: '0.06em', textDecoration: 'none',
                 }}
-              >{item.label}</a>
+              >
+                <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '2px' }}>
+                  <PeacockFeatherIcon size={16} style={{ marginBottom: '-2px' }} />
+                  <span>{item.label}</span>
+                  <FluteIcon width={60} height={12} style={{ marginTop: '-2px' }} />
+                </div>
+              </a>
             )
           })}
           {/* Mobile drawer call CTA */}

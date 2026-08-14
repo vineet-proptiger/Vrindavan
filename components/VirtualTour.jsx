@@ -89,7 +89,7 @@ const VirtualTour = ({ setIsOpen }) => {
           fontFamily: F_JOST,
           fontWeight: '500',
           letterSpacing: '0.18em',
-          textTransform: 'uppercase',
+          textTransform: 'capitalize',
           margin: 0
         }} className="text-[16px] md:text-[20px] drop-shadow-md">
           STEP INTO YOUR FUTURE HOME

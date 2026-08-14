@@ -3,6 +3,7 @@ import React from 'react'
 import {
   Castle, Droplets, MapPin, TreePine, Wallpaper, Gamepad2, Waves, Droplet, Coffee, PartyPopper
 } from 'lucide-react'
+import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons';
 
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
@@ -44,9 +45,11 @@ const Amenities = () => {
           <div className="ornament"><span className="feather">❋</span></div>
           <h2 style={{
             fontFamily: F_JOST, fontWeight: '700', fontSize: '18px',
-            color: '#1E6D7A', letterSpacing: '0.1em', textTransform: 'uppercase', margin: 0,
+            color: '#1E6D7A', letterSpacing: '0.1em', textTransform: 'capitalize', margin: 0,
           }}>
-            <span style={{ color: 'var(--red, #ed1c24)' }}>LIFESTYLE AMENITIES</span>&nbsp;– Experience More Every Day
+            <span className="heading-stick" style={{ color: '#1E6D7A', fontWeight: '800', marginRight: '10px' }}>||</span>
+            <span style={{ color: 'var(--red, #ed1c24)' }}>Lifestyle Amenities</span>&nbsp;– Experience More Every Day
+            <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '10px' }}>||</span>
           </h2>
           <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ सुख सुविधा ॥</p>
         </div>

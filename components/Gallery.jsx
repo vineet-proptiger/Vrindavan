@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { galleryInteriorImages, galleryExteriorImages } from '../lib/images'
+import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons';
 
 const galleryImages = [...galleryExteriorImages, ...galleryInteriorImages]
 
@@ -61,8 +62,10 @@ const Gallery = ({ setIsOpen }) => {
             <div className="ornament"><span className="feather">❋</span></div>
             <h2 data-aos="flip-left" data-aos-delay="500" style={{
               fontFamily: F_JOST, fontWeight: '700', fontSize: '18px',
-              color: '#1E6D7A', letterSpacing: '0.1em', textTransform: 'uppercase', margin: 0,
-            }} className="text-center"><span style={{ color: 'var(--red, #ed1c24)' }}>Hero Homes Plots</span>&nbsp;in Vrindavan GALLERY</h2>
+              color: '#1E6D7A', letterSpacing: '0.1em', textTransform: 'capitalize', margin: 0,
+            }} className="text-center"><span className="heading-stick" style={{ color: '#1E6D7A', fontWeight: '800', marginRight: '10px' }}>||</span>
+            <span style={{ color: 'var(--red, #ed1c24)' }}>Hero Homes Plots</span>&nbsp;in Vrindavan GALLERY
+            <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '10px' }}>||</span></h2>
             <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'4px 0 0',letterSpacing:'0.06em'}}>॥ गैलरी ॥</p>
           </div>
         </div>

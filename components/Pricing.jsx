@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons';
 
 const F_SANS = "var(--font-sans), Open Sans, sans-serif";
 const GOLD = "var(--color-gold, #C9A96E)";
@@ -80,10 +81,12 @@ const Pricing = ({ setIsOpen }) => {
           <h2 data-aos="flip-left" data-aos-delay="500" style={{
             fontFamily: "var(--font-jost), Montserrat, sans-serif", fontWeight: '700', fontSize: '17px',
             color: '#1E6D7A', letterSpacing: '0.1em',
-            textTransform: 'uppercase', margin: 0,
+            textTransform: 'capitalize', margin: 0,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
+            <span className="heading-stick" style={{ color: '#1E6D7A', fontWeight: '800', marginRight: '10px' }}>||</span>
             <span style={{ color: 'var(--red, #ed1c24)' }}>Configurations &amp;</span>&nbsp;Pricing
+            <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '10px' }}>||</span>
           </h2>
           <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ अपना घर अपना धाम ॥</p>
         </div>

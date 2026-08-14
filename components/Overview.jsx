@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { overviewImage } from '../lib/images'
+import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons';
 
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
@@ -72,14 +73,17 @@ const Overview = ({ setIsOpen }) => {
         </div>
       
       {/* ── Mobile Section Heading ── */}
-      <div className="block lg:hidden" style={{ marginBottom: '32px', textAlign: 'left' }}>
+      <div className="block lg:hidden" style={{ marginBottom: '32px', textAlign: 'center' }}>
         <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'15px',margin:'0 0 12px',letterSpacing:'0.06em'}}>॥ श्री वृन्दावन धाम ॥</p>
         <h2 data-aos="flip-right" data-aos-delay="500" style={{
           fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
           color: '#1E6D7A', letterSpacing: '0.1em',
-          textTransform: 'uppercase', margin: '0 0 10px 0',
+          textTransform: 'capitalize', margin: '0 0 10px 0',
+          display: 'block'
         }}>
-          <span style={{ color: 'var(--red, #ed1c24)' }}>Welcome to</span>&nbsp;Hero Homes Plots in Vrindavan
+          <span className="heading-stick" style={{ color: '#1E6D7A', fontWeight: '800', marginRight: '10px' }}>||</span>
+              <span style={{ color: 'var(--red, #ed1c24)' }}>Welcome to</span>&nbsp;Hero Homes Plots in Vrindavan
+              <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '10px' }}>||</span>
         </h2>
         <h3 style={{
           fontFamily: F_JOST, fontWeight: '500', fontSize: '14px',
@@ -101,9 +105,11 @@ const Overview = ({ setIsOpen }) => {
             <h2 data-aos="flip-right" data-aos-delay="500" style={{
               fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
               color: '#1E6D7A', letterSpacing: '0.1em',
-              textTransform: 'uppercase', margin: '0 0 10px 0',
+              textTransform: 'capitalize', margin: '0 0 10px 0',
         }}>
+              <span className="heading-stick" style={{ color: '#1E6D7A', fontWeight: '800', marginRight: '10px' }}>||</span>
               <span style={{ color: 'var(--red, #ed1c24)' }}>Welcome to</span>&nbsp;Hero Homes Plots in Vrindavan
+              <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '10px' }}>||</span>
             </h2>
             <h3 style={{
               fontFamily: F_JOST, fontWeight: '500', fontSize: '14px',

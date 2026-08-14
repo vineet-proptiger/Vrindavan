@@ -53,14 +53,14 @@ export default function Home() {
       
       <CarouselSection 
         setIsOpen={setIsOpen} 
-        title={<><span style={{ color: 'var(--red, #ed1c24)' }}>GLIMPSES OF</span>&nbsp;THE EXTERIOR MASTERPIECE</>} 
+        title={<><span style={{ color: 'var(--red, #ed1c24)' }}>Glimpses Of</span>&nbsp;The Exterior Masterpiece</>} 
         id="exterior-gallery" 
         images={exteriorImages} 
       />
       
       {/* <CarouselSection 
         setIsOpen={setIsOpen} 
-        title={<><span style={{ color: 'var(--red, #ed1c24)' }}>GLIMPSES OF</span>&nbsp;THE INTERIOR MASTERPIECE</>} 
+        title={<><span style={{ color: 'var(--red, #ed1c24)' }}>Glimpses Of</span>&nbsp;The Interior Masterpiece</>} 
         id="interior-gallery" 
         images={interiorImages} 
       /> */}

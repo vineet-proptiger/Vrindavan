@@ -44,7 +44,7 @@ const JapaneseExcellence = () => {
         <div style={{ marginBottom: '40px', textAlign: 'center' }} data-aos="fade-up">
           <h2 style={{
             fontFamily: F_JOST, fontWeight: '700', fontSize: '18px',
-            color: '#1E6D7A', letterSpacing: '0.1em', textTransform: 'uppercase', margin: 0,
+            color: '#1E6D7A', letterSpacing: '0.1em', textTransform: 'capitalize', margin: 0,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
             <ArcIcon />

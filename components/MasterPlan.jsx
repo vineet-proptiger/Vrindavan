@@ -33,9 +33,11 @@ const MasterPlan = ({ setIsOpen }) => {
           <h2 style={{
             fontFamily: "var(--font-jost), Montserrat, sans-serif", fontWeight: '700', fontSize: '17px',
             color: '#1E6D7A', letterSpacing: '0.1em',
-            textTransform: 'uppercase', margin: 0,
+            textTransform: 'capitalize', margin: 0,
           }}>
+            <span className="heading-stick" style={{ color: '#1E6D7A', fontWeight: '800', marginRight: '10px' }}>||</span>
             <span style={{ color: 'var(--red, #ed1c24)' }}>Floor Plans</span>&nbsp;&amp; Layout
+            <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '10px' }}>||</span>
           </h2>
           <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ नक्शा ॥</p>
         </div>
@@ -190,8 +192,8 @@ const MasterPlan = ({ setIsOpen }) => {
                 <button onClick={() => setIsOpen(true)} className="btn-gold"
                   data-aos="zoom-in" data-aos-delay="200"
                   style={{ 
-                    padding: '14px 36px', 
-                    fontSize: '16px', 
+                    padding: '12px 20px', 
+                    fontSize: 'clamp(13px, 4vw, 16px)', 
                     letterSpacing: '0.05em', 
                     fontWeight: '700', 
                     borderRadius: '4px',
@@ -199,7 +201,10 @@ const MasterPlan = ({ setIsOpen }) => {
                     color: '#fff',
                     background: 'var(--color-brand)',
                     border: 'none',
-                    boxShadow: '0 4px 15px rgba(0,0,0,0.3)'
+                    boxShadow: '0 4px 15px rgba(0,0,0,0.3)',
+                    whiteSpace: 'normal',
+                    textAlign: 'center',
+                    lineHeight: '1.4'
                   }}>
                   Request {plans[activePlan].label} Layout
                 </button>
