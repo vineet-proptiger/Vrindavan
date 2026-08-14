@@ -126,7 +126,7 @@ const Overview = ({ setIsOpen }) => {
                 <p style={{ marginBottom: '16px', display: 'inline' }}>
                   Discover a lifestyle of elegance and spiritual serenity at <strong>Hero Homes Vrindavan</strong>, an exclusive residential development offering premium <strong>Residential Plots</strong>. Located right on the Delhi-Mathura Road (NH-44), near the prestigious <strong>GLA University</strong>, this gated township is carefully crafted to offer modern premium living in a peaceful environment.
                 </p>
-                <br /><br />
+                <br />
                 <p style={{ display: 'inline' }}>
                   Spanning a sprawling area of approximately <strong>40 Acres</strong>, Hero Homes Vrindavan features meticulously planned layouts ranging from <strong>90 to 200 Sq. Yards &amp; Premium Villas</strong>. The project offers a robust modern infrastructure combined with peaceful landscaped open spaces, a high-end clubhouse, and premium amenities—making it an exceptional investment opportunity and self-living choice close to historical holy temples like Banke Bihari and ISKCON.{' '}
                 </p>
@@ -226,7 +226,7 @@ const Overview = ({ setIsOpen }) => {
         </div>
 
         {/* ── Right Side: Video ── */}
-        <div className="w-full lg:w-1/2 mt-8 lg:mt-0 order-1 lg:order-2" data-aos="fade-left">
+        <div className="w-full lg:w-1/2 mt-8 lg:mt-2 order-1 lg:order-2" data-aos="fade-left">
           <div className="relative w-full flex justify-center items-center">
             <div className="relative w-full lg:w-[90%] aspect-video sm:aspect-[4/3] mx-auto rounded-xl shadow-2xl overflow-hidden bg-[#e0d6c8]">
               <video 
