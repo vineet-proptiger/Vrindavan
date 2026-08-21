@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { galleryInteriorImages, galleryExteriorImages } from '../lib/images'
-import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons';
+import { PeacockFeatherIcon, FluteIcon, DiyaIcon } from './ThemeIcons';
 
 const galleryImages = [...galleryExteriorImages, ...galleryInteriorImages]
 
@@ -66,46 +66,73 @@ const Gallery = ({ setIsOpen }) => {
             }} className="text-center"><span className="heading-stick" style={{ color: '#1E6D7A', fontWeight: '800', marginRight: '10px' }}>||</span>
             <span style={{ color: 'var(--red, #ed1c24)' }}>Hero Homes Plots</span>&nbsp;in Vrindavan GALLERY
             <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '10px' }}>||</span></h2>
-            <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'4px 0 0',letterSpacing:'0.06em'}}>॥ गैलरी ॥</p>
+            <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'4px 0 0',letterSpacing:'0.06em'}}><DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /> ॥ गैलरी ॥ <DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /></p>
           </div>
         </div>
 
-        {/* ── Image Grid ── */}
-        <div data-aos="fade-up" data-aos-delay="100" className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 transition-all duration-500 ease-in-out">
+        {/* ── Premium Art-Gallery Grid ── */}
+        <div data-aos="fade-up" data-aos-delay="100" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 transition-all duration-500 ease-in-out">
           {visibleImages.map((img, idx) => (
             <div 
               key={idx}
-              className="relative w-full cursor-pointer group overflow-hidden rounded-lg shadow-sm hover:shadow-md transition-all duration-300" 
-              style={{ aspectRatio: '16/9', background: '#eee' }}
+              className="relative w-full cursor-pointer group rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 bg-white" 
+              style={{ padding: '8px', border: '1px solid #EAE5DC' }}
               onClick={() => openLightbox(img.src)}
             >
-              <Image 
-                src={img.src} 
-                alt={img.alt || 'Gallery Image'} 
-                fill 
-                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105" 
-              />
-              {/* Premium hover overlay */}
-              <div 
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 md:p-5"
-                style={{
-                  background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)',
-                }}
-              >
-                <span 
-                  className="translate-y-2 group-hover:translate-y-0 transition-transform duration-300"
-                  style={{ 
-                    color: '#fff', 
-                    fontFamily: F_JOST, 
-                    fontSize: '11px', 
-                    fontWeight: '600', 
-                    letterSpacing: '0.08em', 
-                    textTransform: 'uppercase' 
+              <div className="relative w-full overflow-hidden rounded-xl bg-gray-100" style={{ aspectRatio: '3/4' }}>
+                <Image 
+                  src={img.src} 
+                  alt={img.alt || 'Gallery Image'} 
+                  fill 
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                
+                {/* Always-on subtle gradient at the bottom for contrast */}
+                <div 
+                  className="absolute inset-x-0 bottom-0 h-1/2 opacity-60 transition-opacity duration-300 group-hover:opacity-80"
+                  style={{
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%)',
                   }}
-                >
-                  {img.alt ? img.alt.replace('Hero Homes Plots in Vrindavan - ', '') : 'VIEW PREVIEW'}
-                </span>
+                />
+
+                {/* Floating Frosted Glass Label */}
+                <div className="absolute inset-x-3 bottom-3 md:inset-x-4 md:bottom-4">
+                  <div style={{
+                    background: 'rgba(255, 255, 255, 0.2)',
+                    backdropFilter: 'blur(8px)',
+                    border: '1px solid rgba(255, 255, 255, 0.4)',
+                    padding: '12px 16px',
+                    borderRadius: '12px',
+                    textAlign: 'center',
+                    transform: 'translateY(10px)',
+                    opacity: 0.9,
+                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  }} className="group-hover:translate-y-0 group-hover:opacity-100 group-hover:bg-white/90">
+                    <span 
+                      style={{ 
+                        color: '#FFFFFF', 
+                        fontFamily: F_JOST, 
+                        fontSize: '13px', 
+                        fontWeight: '600', 
+                        letterSpacing: '0.06em', 
+                        textTransform: 'uppercase',
+                        display: 'block',
+                        transition: 'color 0.4s'
+                      }}
+                      className="group-hover:text-[#1E6D7A]"
+                    >
+                      {img.alt ? img.alt.replace('Hero Homes Plots in Vrindavan - ', '') : 'VIEW PREVIEW'}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Hover Reveal 'View Icon' */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-50 group-hover:scale-100">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                  </svg>
+                </div>
               </div>
             </div>
           ))}

@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons';
+import { PeacockFeatherIcon, FluteIcon, DiyaIcon } from './ThemeIcons';
 
 const F_SANS = "var(--font-sans), Open Sans, sans-serif";
 const GOLD = "var(--color-gold, #C9A96E)";
@@ -88,87 +88,89 @@ const Pricing = ({ setIsOpen }) => {
             <span style={{ color: 'var(--red, #ed1c24)' }}>Configurations &amp;</span>&nbsp;Pricing
             <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '10px' }}>||</span>
           </h2>
-          <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ अपना घर अपना धाम ॥</p>
+          <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}><DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /> ॥ अपना घर अपना धाम ॥ <DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /></p>
         </div>
 
-        {/* COMBINED PRICING BLOCK */}
-        <div 
-          className="relative bg-white border border-[#D5C2A8] max-w-5xl mx-auto overflow-hidden"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <CurvedCorners />
+        {/* DISTINCT PRICING CARDS */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-10 max-w-6xl mx-auto mt-10">
+          {units.map((unit, idx) => {
+            const isPopular = idx === 1;
+            
+            return (
+              <div 
+                key={idx} 
+                className={`relative flex flex-col justify-between transition-transform duration-300 hover:-translate-y-2`}
+                data-aos="fade-up"
+                data-aos-delay={(idx * 150) + 100}
+                style={{
+                  background: isPopular ? '#FFFDF2' : '#FFFFFF',
+                  border: isPopular ? `2px solid #C9A96E` : `1px solid #D5C2A8`,
+                  borderRadius: '16px',
+                  padding: '40px 30px',
+                  boxShadow: isPopular ? '0 20px 40px rgba(201,169,110,0.15)' : '0 10px 30px rgba(0,0,0,0.05)',
+                  overflow: 'hidden'
+                }}
+              >
+                {/* Popular Badge (Corner Ribbon) */}
+                {isPopular && (
+                  <div style={{
+                    position: 'absolute', top: '24px', right: '-36px',
+                    background: '#c8102e', color: '#fff',
+                    padding: '6px 40px', transform: 'rotate(45deg)',
+                    fontSize: '11px', fontWeight: '800', letterSpacing: '0.1em',
+                    boxShadow: '0 4px 10px rgba(200, 16, 46, 0.2)', fontFamily: F_SANS,
+                    textAlign: 'center', zIndex: 10
+                  }}>
+                    MOST POPULAR
+                  </div>
+                )}
 
-          {/* Grid Container for Units */}
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#D5C2A8] w-full mx-auto">
-            {units.map((unit, idx) => (
-              <div key={idx} className="p-8 md:p-10 relative flex flex-col justify-between">
                 <div>
-                  {/* Category / Subheading */}
-                  <h4
-                    data-aos={idx % 2 === 0 ? "flip-left" : "flip-right"} data-aos-delay="400"
-                    className="mb-1 whitespace-nowrap"
-                    style={{ 
-                      fontFamily: F_SANS, 
-                      fontSize: "clamp(12px, 1.2vw, 15px)", 
-                      fontWeight: '400',
-                      color: idx === 1 ? '#e63946' : '#9E8B75', 
-                      letterSpacing: "0.15em"
-                    }}
-                  >
-                    {unit.category}
-                  </h4>
-                  
-                  {/* Title / Badge */}
-                  <div className="mb-4" data-aos={idx % 2 === 0 ? "flip-left" : "flip-right"} data-aos-delay="500">
+                  {/* Title / Badges */}
+                  <div className="mb-6 flex flex-wrap gap-2 items-center">
                     <span 
                       style={{ 
                         display: 'inline-flex',
-                        background: 'rgba(30, 109, 122, 0.06)', 
-                        color: '#1E6D7A',
+                        background: 'rgba(201, 169, 110, 0.1)', 
+                        color: isPopular ? '#c8102e' : '#1E6D7A',
                         padding: '6px 16px', 
                         borderRadius: '100px',
                         fontFamily: F_SANS,
-                        fontSize: '13.5px',
+                        fontSize: '12px',
                         fontWeight: '700',
                         letterSpacing: '0.08em',
                         textTransform: 'uppercase',
-                        border: '1px solid rgba(30, 109, 122, 0.15)'
+                        border: '1px solid rgba(201, 169, 110, 0.3)'
                       }}
                     >
                       {unit.type}
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 mb-6">
-                    <span className="text-gray-400 text-xs uppercase tracking-wider font-semibold" style={{ fontFamily: F_SANS }}>Size:</span>
-                    <p className="text-sm font-semibold" style={{ fontFamily: F_SANS, color: PRIMARY }}>
+                  
+                  <div className="flex items-end gap-2 mb-2">
+                    <p className="text-2xl font-bold" style={{ fontFamily: F_SANS, color: PRIMARY }}>
                       {unit.size}
                     </p>
                   </div>
 
                   {/* Price Section */}
-                  <div className="mb-8" data-aos={idx % 2 === 0 ? "flip-right" : "flip-left"} data-aos-delay="500">
-                    <span className="text-[10px] text-gray-400 uppercase tracking-[0.15em] font-medium block mb-1" style={{ fontFamily: F_SANS }}>Starting At</span>
+                  <div className="mb-8 pb-8" style={{ borderBottom: `1px solid #f0ede6` }}>
+                    <span className="text-[10px] uppercase tracking-[0.15em] font-medium block mb-2" style={{ fontFamily: F_SANS, color: '#9CA3AF' }}>Starting At</span>
                     <div className="flex items-baseline gap-3">
-                      {unit.oldPrice && (
-                        <span className="text-sm md:text-base line-through font-medium opacity-60" style={{ fontFamily: F_SANS, color: GOLD }}>
-                          {unit.oldPrice}
-                        </span>
-                      )}
-                      <p className={`font-extrabold whitespace-nowrap ${unit.price.length > 12 ? 'text-xl md:text-[22px]' : 'text-2xl md:text-3xl'}`} style={{ fontFamily: F_SANS, color: GOLD }}>
+                      <p className={`font-extrabold whitespace-nowrap ${unit.price.length > 12 ? 'text-xl md:text-[22px]' : 'text-3xl md:text-4xl'}`} style={{ fontFamily: F_SANS, color: GOLD }}>
                         {unit.price}
                       </p>
                     </div>
                   </div>
 
                   {/* Features List */}
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-4 mb-10">
                     {unit.features.map((feature, fIdx) => (
-                      <div key={fIdx} data-aos="fade-left" data-aos-delay={(fIdx * 100) + 200} className="flex items-start gap-3">
-                        <div className="mt-1 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center bg-amber-50">
-                          <Check size={12} strokeWidth={3} style={{ color: GOLD }} />
+                      <div key={fIdx} className="flex items-start gap-3">
+                        <div className="mt-0.5 flex-shrink-0 flex items-center justify-center">
+                          <DiyaIcon size={16} />
                         </div>
-                        <span className="text-gray-700 font-medium text-[14px]" style={{ fontFamily: F_SANS }}>{feature}</span>
+                        <span className="font-medium text-[14px]" style={{ fontFamily: F_SANS, color: '#4A4540' }}>{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -176,18 +178,18 @@ const Pricing = ({ setIsOpen }) => {
 
                 {/* Button */}
                 <button
-                  data-aos="flip-right" data-aos-delay="500"
                   onClick={() => setIsOpen(true)}
-                  className="btn-gold w-full py-3.5 text-sm tracking-widest uppercase transition-all duration-300 font-bold"
-                  style={{ borderRadius: "8px" }}
+                  className="btn-cta btn-red w-full py-4 text-sm tracking-widest uppercase transition-all duration-300 font-bold flex justify-center items-center gap-2"
+                  style={{ 
+                    borderRadius: "8px", 
+                    fontFamily: F_SANS,
+                  }}
                 >
                   {unit.btnText}
                 </button>
               </div>
-            ))}
-          </div>
-
-          {/* Curved Corners Cutout */}
+            );
+          })}
         </div>
 
 

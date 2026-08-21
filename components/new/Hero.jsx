@@ -1,11 +1,12 @@
 import React from 'react';
+import { DiyaIcon } from '../ThemeIcons';
 
 export default function Hero({ setIsOpen }) {
   return (
     <>
       <section className="hero">
   <div style={{'maxWidth': '980px'}}>
-    <p className="devanagari" style={{'color': 'var(--gold-warm)', 'fontSize': '18px', 'margin': '0 0 22px', 'letterSpacing': '0.06em'}}>॥ श्री वृन्दावन धाम ॥</p>
+    <p className="devanagari" style={{'color': 'var(--gold-warm)', 'fontSize': '18px', 'margin': '0 0 22px', 'letterSpacing': '0.06em'}}><DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /> ॥ श्री वृन्दावन धाम ॥ <DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /></p>
     <div style={{'display': 'inline-block', 'borderTop': '1px solid var(--red)', 'borderBottom': '1px solid var(--red)', 'padding': '8px 28px', 'marginBottom': '36px'}}>
       <p className="eyebrow" style={{'color': 'var(--red)', 'margin': '0'}}>New Launch &nbsp;·&nbsp; Vrindavan, Mathura</p>
     </div>

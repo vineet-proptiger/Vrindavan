@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { PROJECT_ID, PROJECT_NAME, API_ENDPOINT, SHEET_NAME, SECRET_KEY, CITY_DISPLAY } from '../lib/config'
 import { buildTrackingFields } from '../lib/formMeta'
-import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons';
+import { PeacockFeatherIcon, FluteIcon, DiyaIcon } from './ThemeIcons';
 
 const GOLD = 'var(--color-gold)'
 const GOLD_DARK = 'var(--color-gold-dark)'
@@ -191,7 +191,7 @@ const AboutDeveloper = ({ setIsOpen }) => (
           <span style={{ color: 'var(--red, #ed1c24)' }}>Need</span>&nbsp;Assistance?
           <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '10px' }}>||</span>
         </h2>
-        <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ सेवा सहायता ॥</p>
+        <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}><DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /> ॥ सेवा सहायता ॥ <DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /></p>
       </div>
 
       {/* Two Column Layout */}

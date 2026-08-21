@@ -50,7 +50,7 @@ const CurvedCorners = ({ bg = BG }) => {
 }
 
 import { Landmark, TrendingUp, Plane, HardHat, ShieldCheck, Users } from 'lucide-react'
-import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons';
+import { PeacockFeatherIcon, FluteIcon, DiyaIcon } from './ThemeIcons';
 
 const highlights = [
   { 
@@ -104,8 +104,34 @@ const highlights = [
 ]
 
 const Highlights = ({ setIsOpen }) => (
-  <section id="highlights" style={{ background: BG, padding: '60px 0 72px' }}>
-    <div className="px-4 sm:px-8" style={{ maxWidth: '1100px', margin: '0 auto' }}>
+  <section id="highlights" className="relative" style={{ padding: '60px 0 72px' }}>
+    <style dangerouslySetInnerHTML={{ __html: `
+      .highlights-bg {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: url('/images/highlights/smDevice.webp');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        z-index: 1;
+      }
+      @media (min-width: 768px) {
+        .highlights-bg {
+          background-image: url('/images/highlights/bigDevice.webp');
+        }
+      }
+      .highlights-overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0, 0, 0, 0.75);
+        z-index: 2;
+      }
+    `}} />
+
+    <div className="highlights-bg"></div>
+    <div className="highlights-overlay"></div>
+
+    <div className="relative z-10 px-4 sm:px-8" style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
       {/* Heading */}
       <div style={{ textAlign: 'center', marginBottom: '40px' }}>
@@ -120,25 +146,27 @@ const Highlights = ({ setIsOpen }) => (
           <span style={{ color: 'var(--red, #ed1c24)' }}>Designed for Comfort,</span>&nbsp;Wellness &amp; Leisure 
           <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '10px' }}>||</span>
         </h2>
-        <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ सुख सुविधा ॥</p>
+        <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}><DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /> ॥ सुख सुविधा ॥ <DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /></p>
       </div>
 
-      {/* Bordered container with curved concave corner notches */}
+      {/* Grid container with translucent border */}
       <div
         style={{
           position: 'relative',
-          border: `1px solid ${BORDER_COLOR}`,
+          border: `1px solid rgba(255, 255, 255, 0.2)`,
+          borderRadius: '12px',
           overflow: 'hidden',
+          background: 'rgba(255, 255, 255, 0.05)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
         }}
       >
-        <CurvedCorners bg={BG} />
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[1px]" style={{ background: BORDER_COLOR }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[1px]" style={{ background: 'rgba(255, 255, 255, 0.1)' }}>
           {highlights.map(({ title, desc, Icon, tag, tagColor, iconBg }, i) => (
             <div key={i} data-aos="flip-left" data-aos-delay={i * 100} style={{
               padding: '36px 20px 28px',
               textAlign: 'center',
-              background: BG,
+              background: 'rgba(0, 0, 0, 0.4)',
               display: 'flex', flexDirection: 'column', alignItems: 'center'
             }}>
               {/* Colorful circle with Lucide Icon */}
@@ -148,7 +176,7 @@ const Highlights = ({ setIsOpen }) => (
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 margin: '0 auto 24px',
                 transition: 'all 0.3s ease',
-                boxShadow: `0 4px 12px ${iconBg || '#D4A843'}40`
+                boxShadow: `0 4px 12px ${iconBg || '#D4A843'}60`
               }}>
                 <Icon color="#ffffff" size={32} strokeWidth={1.5} />
               </div>
@@ -156,7 +184,7 @@ const Highlights = ({ setIsOpen }) => (
               {/* Title */}
               <h3 style={{
                 fontFamily: F_JOST, fontSize: '13.5px', fontWeight: '700',
-                color: '#3A2A0E', letterSpacing: '0.1em',
+                color: '#FFFFFF', letterSpacing: '0.1em',
                 textTransform: 'uppercase', margin: '0 0 12px',
                 minHeight: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center'
               }}>{title}</h3>
@@ -164,7 +192,7 @@ const Highlights = ({ setIsOpen }) => (
               {/* Description */}
               <p style={{
                 fontFamily: F_SANS, fontSize: '13px',
-                color: '#4A4540',
+                color: 'rgba(255, 255, 255, 0.85)',
                 lineHeight: 1.65, margin: '0 0 20px',
                 flexGrow: 1
               }}>{desc}</p>
@@ -173,8 +201,8 @@ const Highlights = ({ setIsOpen }) => (
               {tag && (
                 <div style={{
                   display: 'inline-block',
-                  background: `${tagColor}1A`, // 10% opacity
-                  color: tagColor,
+                  background: `${iconBg}33`, // 20% opacity of icon color
+                  color: iconBg, // using iconBg for brighter contrast on dark mode
                   padding: '6px 12px',
                   borderRadius: '100px',
                   fontSize: '10.5px',

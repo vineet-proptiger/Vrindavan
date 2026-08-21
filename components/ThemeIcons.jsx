@@ -41,3 +41,17 @@ export const FluteIcon = ({ width = 40, height = 14, className = '', style = {} 
     <path d="M26 24 L26 40" stroke="#FFD700" strokeWidth="1" fill="none"/>
   </svg>
 );
+
+export const DiyaIcon = ({ size = 20, className = '', style = {} }) => (
+  <svg width={size} height={size} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} style={{...style, display: 'inline-block'}}>
+    <path d="M6 22 C 6 32, 14 36, 20 36 C 26 36, 34 32, 34 22 Z" fill="#C9A96E" />
+    <path d="M8 22 C 8 30, 14 33, 20 33 C 26 33, 32 30, 32 22 Z" fill="#EAD39D" />
+    <ellipse cx="20" cy="14" rx="7" ry="10" fill="#FFC107" opacity="0.3">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="1.5s" repeatCount="indefinite" />
+    </ellipse>
+    <path d="M20 5 Q 24 12 24 16 A 4 4 0 0 1 16 16 Q 16 12 20 5" fill="#FF5722">
+      <animate attributeName="d" values="M20 5 Q 24 12 24 16 A 4 4 0 0 1 16 16 Q 16 12 20 5; M20 4 Q 25 11 23 16 A 4 4 0 0 1 17 16 Q 15 11 20 4; M20 5 Q 24 12 24 16 A 4 4 0 0 1 16 16 Q 16 12 20 5" dur="1.5s" repeatCount="indefinite" />
+    </path>
+    <path d="M20 9 Q 22 13 22 15 A 2 2 0 0 1 18 15 Q 18 13 20 9" fill="#FFEB3B" />
+  </svg>
+);

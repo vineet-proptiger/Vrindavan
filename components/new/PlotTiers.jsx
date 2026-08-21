@@ -1,4 +1,5 @@
 import React from 'react';
+import { DiyaIcon } from '../ThemeIcons';
 
 export default function PlotTiers({ setIsOpen }) {
   return (
@@ -9,7 +10,7 @@ export default function PlotTiers({ setIsOpen }) {
       <div className="ornament"><span className="feather">❋</span></div>
       <p className="eyebrow" style={{'color': 'var(--red)'}}>Bespoke Plot Sizes</p>
       <h2 className="h-display">Plots crafted for <em style={{'color': 'var(--red)', 'fontStyle': 'italic'}}>connoisseurs</em>.</h2>
-      <p className="devanagari" style={{'color': 'var(--gold-warm)', 'fontSize': '14px', 'margin': '14px 0 0', 'letterSpacing': '0.06em'}}>॥ अपना घर अपना धाम ॥</p>
+      <p className="devanagari" style={{'color': 'var(--gold-warm)', 'fontSize': '14px', 'margin': '14px 0 0', 'letterSpacing': '0.06em'}}><DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /> ॥ अपना घर अपना धाम ॥ <DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /></p>
     </div>
     <div className="plot-grid">
 

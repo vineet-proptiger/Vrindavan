@@ -2,7 +2,10 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { masterplanImages } from '../lib/images'
-import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons'
+import { PeacockFeatherIcon, FluteIcon, DiyaIcon } from './ThemeIcons'
+
+import 'lucide-react'
+import { Lock } from 'lucide-react'
 
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
@@ -10,9 +13,6 @@ const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const plans = [
   { label: 'Site Master Plan', img: masterplanImages.masterPlan },
   { label: 'Plots Layout', img: masterplanImages.masterPlan },
-  // { label: 'Cozy Villa',       img: masterplanImages.bhk2 },
-  // { label: 'Spacious Bungalow',       img: masterplanImages.bhk3 },
-  // { label: 'Duplex Villa',       img: masterplanImages.bhk45 },
 ]
 
 const MasterPlan = ({ setIsOpen }) => {
@@ -21,198 +21,124 @@ const MasterPlan = ({ setIsOpen }) => {
   return (
     <section id="masterplan" style={{
       scrollMarginTop: '80px',
-      padding: '56px 0',
-      background: '#ffffff',
-      borderBottom: '1px solid #f0f0f0',
+      padding: '80px 0',
+      background: '#FFFFFF',
+      borderBottom: '1px solid #EAE5DC',
     }}>
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="container mx-auto px-4 md:px-8 max-w-[1100px]">
 
         {/* Section Header */}
         <div style={{ textAlign: 'center', marginBottom: '40px' }} data-aos="fade-up">
           <div className="ornament"><span className="feather">❋</span></div>
           <h2 style={{
-            fontFamily: "var(--font-jost), Montserrat, sans-serif", fontWeight: '700', fontSize: '17px',
+            fontFamily: F_JOST, fontWeight: '700', fontSize: '18px',
             color: '#1E6D7A', letterSpacing: '0.1em',
             textTransform: 'capitalize', margin: 0,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
             <span className="heading-stick" style={{ color: '#1E6D7A', fontWeight: '800', marginRight: '10px' }}>||</span>
             <span style={{ color: 'var(--red, #ed1c24)' }}>Floor Plans</span>&nbsp;&amp; Layout
             <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '10px' }}>||</span>
           </h2>
-          <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ नक्शा ॥</p>
+          <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>
+            <DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /> ॥ नक्शा ॥ <DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} />
+          </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-6 items-stretch">
-
-          {/* LEFT — Tabs */}
-          <div className="w-full lg:w-[32%]" data-aos="fade-right">
-            <div style={{
-              background: '#fff', borderRadius: '8px',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
-              border: '1px solid #D5C2A8', overflow: 'hidden',
-            }}>
-              {/* Tab header */}
-              <div style={{
-                background: '#000000',
-                padding: '16px 20px', position: 'relative', overflow: 'hidden',
+        {/* Top Floating Tabs */}
+        <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-8" data-aos="fade-up" data-aos-delay="100">
+          {plans.map((plan, idx) => (
+            <button 
+              key={idx} 
+              onClick={() => setActivePlan(idx)}
+              className="flex items-center justify-center gap-2 transition-all duration-300 rounded-full border px-4 py-2.5 md:px-6 md:py-3"
+              style={{
+                background: activePlan === idx ? '#1E6D7A' : '#FFFFFF',
+                borderColor: activePlan === idx ? '#1E6D7A' : '#D5C2A8',
+                boxShadow: activePlan === idx ? '0 10px 20px rgba(30,109,122,0.2)' : 'none',
+              }}
+            >
+              <span className="whitespace-nowrap" style={{
+                fontFamily: F_JOST, fontSize: 'clamp(12px, 3.5vw, 14px)', fontWeight: activePlan === idx ? '700' : '600',
+                color: activePlan === idx ? '#FFFFFF' : '#4A4540',
+                letterSpacing: '0.04em', textTransform: 'uppercase'
               }}>
-                <div style={{
-                  position: 'absolute', top: 0, left: 0, right: 0, height: '3px',
-                  background: 'linear-gradient(90deg, var(--color-gold), var(--color-gold-light))',
-                }} />
-                <p style={{
-                  fontFamily: F_JOST, fontWeight: '700', fontSize: '13px',
-                  color: '#fff', margin: 0, letterSpacing: '0.06em', textTransform: 'uppercase'
-                }}>
-                  Select Floor Plan
-                </p>
-                <p style={{
-                  fontFamily: F_SANS, fontSize: '11px',
-                  color: 'rgba(255,255,255,0.5)', margin: '3px 0 0'
-                }}>
-                  Click to preview
-                </p>
-              </div>
-
-              {/* Tabs */}
-              {plans.map((plan, idx) => (
-                <button key={idx} onClick={() => setActivePlan(idx)}
-                  style={{
-                    width: '100%', textAlign: 'left',
-                    padding: '16px 20px',
-                    background: activePlan === idx ? 'linear-gradient(90deg, rgba(30,109,122,0.05) 0%, #fff 100%)' : '#fff',
-                    border: 'none',
-                    borderLeft: activePlan === idx ? '3px solid #1E6D7A' : '3px solid transparent',
-                    borderBottom: idx < plans.length - 1 ? '1px solid #f5f5f5' : 'none',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s',
-                    display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px',
-                  }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                    {/* Number badge */}
-                    <span style={{
-                      width: '32px', height: '32px', borderRadius: '50%', flexShrink: 0,
-                      background: activePlan === idx ? '#1E6D7A' : '#f3f4f6',
-                      color: activePlan === idx ? '#fff' : '#9ca3af',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: '12px', fontFamily: F_JOST, fontWeight: '700',
-                      boxShadow: activePlan === idx ? '0 4px 10px rgba(30,109,122,0.3)' : 'none',
-                      transition: 'all 0.3s',
-                    }}>
-                      {String(idx + 1).padStart(2, '0')}
-                    </span>
-                    <span style={{
-                      fontSize: '14px', fontWeight: activePlan === idx ? '800' : '600', fontFamily: F_JOST,
-                      color: activePlan === idx ? '#1E6D7A' : '#4b5563',
-                      letterSpacing: '0.03em',
-                      transition: 'color 0.3s',
-                    }}>{plan.label}</span>
-                  </div>
-                  {/* Thematic Icon / Arrow */}
-                  {activePlan === idx ? (
-                    <PeacockFeatherIcon size={24} style={{ transform: 'rotate(-25deg)' }} />
-                  ) : (
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                      stroke="#d1d5db"
-                      strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                  )}
-                </button>
-              ))}
-
-              {/* Info box */}
-              <div style={{
-                margin: '16px', padding: '16px',
-                background: 'rgba(213, 194, 168, 0.1)', borderRadius: '8px',
-                border: '1px solid rgba(213, 194, 168, 0.4)',
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <FluteIcon width={32} height={12} style={{ flexShrink: 0 }} />
-                  <p style={{
-                    fontFamily: F_SANS, fontSize: '11.5px', color: '#555',
-                    margin: 0, lineHeight: 1.5, fontWeight: '500'
-                  }}>
-                    Register to receive detailed floor plans &amp; pricing directly to your inbox.
-                  </p>
+                {plan.label}
+              </span>
+              {activePlan === idx && (
+                <div className="flex-shrink-0 flex items-center justify-center">
+                  <PeacockFeatherIcon size={16} style={{ transform: 'rotate(-25deg)', color: '#FFFFFF' }} />
                 </div>
-              </div>
-            </div>
-          </div>
+              )}
+            </button>
+          ))}
+        </div>
 
-          {/* RIGHT — Image preview */}
-          <div className="w-full lg:flex-1" data-aos="zoom-in">
-            <div style={{
-              position: 'relative', borderRadius: '8px', overflow: 'hidden',
-              border: '1px solid #D5C2A8',
-              boxShadow: '0 10px 36px var(--color-shadow-inner)',
-              height: '100%', minHeight: '400px',
-            }}>
-              {/* Brand top accent */}
-              <div style={{
-                position: 'absolute', top: 0, left: 0, right: 0, height: '4px',
-                background: 'linear-gradient(90deg, #1E6D7A, #15525C)', zIndex: 10,
+        {/* Full-width Immersive Preview */}
+        <div className="w-full relative" data-aos="zoom-in" data-aos-delay="200">
+          <div className="relative rounded-2xl overflow-hidden border border-[#D5C2A8] shadow-[0_20px_40px_rgba(0,0,0,0.08)] h-[280px] md:h-[500px] bg-[#FDF8F6]">
+            
+            {/* Blurred Background Image */}
+            <Image src={plans[activePlan].img} alt={plans[activePlan].label} fill
+              style={{ 
+                objectFit: 'cover', 
+                filter: 'blur(8px)', 
+                transform: 'scale(1.05)' 
               }} />
 
-              {/* Plan label top-left */}
-              <div style={{
-                position: 'absolute', top: '16px', left: '16px', zIndex: 10,
-                background: 'rgba(30, 109, 122, 0.9)', backdropFilter: 'blur(6px)',
-                borderRadius: '8px', padding: '6px 14px',
-                boxShadow: '0 4px 12px rgba(30,109,122,0.3)'
-              }}>
-                <span style={{
-                  color: '#fff', fontSize: '11px', fontFamily: F_JOST,
-                  fontWeight: '700', letterSpacing: '0.04em'
-                }}>
-                  {plans[activePlan].label}
-                </span>
-              </div>
+            {/* Dark Overlay for better contrast */}
+            <div className="absolute inset-0 bg-black/20" />
 
-              {/* Blurred image */}
-              <Image src={plans[activePlan].img} alt={plans[activePlan].label} fill
-                style={{ 
-                  objectFit: 'cover', 
-                  filter: 'blur(5px)', 
-                  transform: 'scale(1.06)' 
-                }} />
-
-              {/* Horizontal Dark Strip overlay in center */}
-              <div style={{
-                position: 'absolute', top: '50%', left: 0, right: 0,
-                transform: 'translateY(-50%)',
-                background: 'rgba(0, 0, 0, 0.6)',
-                backdropFilter: 'blur(4px)',
-                padding: '32px 20px',
-                display: 'flex', flexDirection: 'column',
-                alignItems: 'center', justifyContent: 'center', zIndex: 5,
-                borderTop: '1px solid rgba(255,255,255,0.1)',
-                borderBottom: '1px solid rgba(255,255,255,0.1)',
+            {/* DESKTOP Premium Frosted Glass Unlock Card */}
+            <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[400px]">
+              <div 
+                className="p-10"
+                style={{
+                background: 'rgba(255, 255, 255, 0.85)',
+                backdropFilter: 'blur(12px)',
+                borderRadius: '20px',
+                textAlign: 'center',
+                border: '1px solid rgba(255, 255, 255, 0.5)',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.15)'
               }}>
-                <button onClick={() => setIsOpen(true)} className="btn-gold"
-                  data-aos="zoom-in" data-aos-delay="200"
-                  style={{ 
-                    padding: '12px 20px', 
-                    fontSize: 'clamp(13px, 4vw, 16px)', 
-                    letterSpacing: '0.05em', 
-                    fontWeight: '700', 
-                    borderRadius: '4px',
-                    fontFamily: F_SANS,
-                    color: '#fff',
-                    background: 'var(--color-brand)',
-                    border: 'none',
-                    boxShadow: '0 4px 15px rgba(0,0,0,0.3)',
-                    whiteSpace: 'normal',
-                    textAlign: 'center',
-                    lineHeight: '1.4'
-                  }}>
-                  Request {plans[activePlan].label} Layout
+                
+                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-5" style={{ background: 'rgba(200, 16, 46, 0.1)', color: '#c8102e' }}>
+                  <Lock className="w-7 h-7" strokeWidth={2.5} />
+                </div>
+                
+                <h3 className="text-xl font-bold mb-3" style={{ fontFamily: F_JOST, color: '#1E6D7A' }}>
+                  {plans[activePlan].label} is Locked
+                </h3>
+                
+                <p className="text-sm mb-8" style={{ fontFamily: F_SANS, color: '#4A4540', lineHeight: 1.5 }}>
+                  Register to unlock and receive detailed floor plans, layouts, & pricing directly to your inbox.
+                </p>
+
+                <button 
+                  onClick={() => setIsOpen(true)} 
+                  className="btn-cta btn-red w-full py-4 text-sm tracking-widest uppercase transition-all duration-300 font-bold flex justify-center items-center gap-2"
+                  style={{ borderRadius: '8px', fontFamily: F_SANS }}
+                >
+                  Unlock Layout
                 </button>
               </div>
             </div>
-          </div>
 
+            {/* MOBILE ONLY Button */}
+            <div className="md:hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] max-w-[320px]">
+              <button 
+                onClick={() => setIsOpen(true)} 
+                className="btn-cta btn-red w-full py-3.5 text-[13px] tracking-wider uppercase transition-all duration-300 font-bold flex justify-center items-center gap-2 shadow-xl"
+                style={{ borderRadius: '8px', fontFamily: F_SANS }}
+              >
+                <Lock className="w-4 h-4" strokeWidth={2.5} />
+                Unlock {plans[activePlan].label}
+              </button>
+            </div>
+
+          </div>
         </div>
+
       </div>
     </section>
   )

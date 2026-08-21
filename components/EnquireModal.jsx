@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { X } from 'lucide-react'
 import LeadForm from './LeadForm'
 import { logoImages } from '../lib/images'
-import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons'
+import { PeacockFeatherIcon, FluteIcon, DiyaIcon } from './ThemeIcons'
 
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
@@ -77,9 +77,7 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
                   <PeacockFeatherIcon size={16} style={{ position: 'absolute', bottom: '8px', left: '18px', zIndex: 2, transform: 'rotate(25deg)' }} />
                 </div>
                 
-                <p className="devanagari text-center" style={{ color: 'var(--gold-warm, #d4a843)', fontSize: '16px', margin: '0 4px', letterSpacing: '0.06em' }}>
-                  ॥ हरे कृष्ण हरे कृष्ण ॥
-                </p>
+                <p className="devanagari text-center" style={{ color: 'var(--gold-warm, #d4a843)', fontSize: '16px', margin: '0 4px', letterSpacing: '0.06em' }}><DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /> ॥ हरे कृष्ण हरे कृष्ण ॥ <DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /></p>
                 
                 {/* Right Icon Group */}
                 <div style={{ position: 'relative', width: '40px', height: '20px' }}>
@@ -93,19 +91,19 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
             <div className="bg-[#FAF7F0] rounded-md p-3 px-3 sm:px-4 mb-3 sm:mb-5">
               <div className="grid grid-cols-2 gap-x-4 gap-y-2.5 text-[13px] font-medium text-[#091E2A]" style={{ fontFamily: F_SANS }}>
                 <div className="flex items-center gap-1.5">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#117937" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+                  <DiyaIcon size={16} />
                   <span>Exclusive Plots</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#117937" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+                  <DiyaIcon size={16} />
                   <span>New Launch</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#117937" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+                  <DiyaIcon size={16} />
                   <span>Prime Location</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#117937" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+                  <DiyaIcon size={16} />
                   <span>Premium Amenities</span>
                 </div>
               </div>

@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons';
+import { PeacockFeatherIcon, FluteIcon, DiyaIcon } from './ThemeIcons';
 
 
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
@@ -138,7 +138,7 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", id = "h
           }}>
             <span className="heading-stick" style={{ color: '#1E6D7A', fontWeight: '800', marginRight: '10px' }}>||</span> {title} <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '10px' }}>||</span>
           </h2>
-          <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}>॥ दिव्य दर्शन ॥</p>
+          <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'14px',margin:'14px 0 0',letterSpacing:'0.06em'}}><DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /> ॥ दिव्य दर्शन ॥ <DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /></p>
         </div>
 
         {/* ── Main Sliding Track Gallery (Premium & Zero-Flash) ── */}

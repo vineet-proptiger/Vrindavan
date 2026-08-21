@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { overviewImage } from '../lib/images'
-import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons';
+import { PeacockFeatherIcon, FluteIcon, DiyaIcon } from './ThemeIcons';
 
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
@@ -54,41 +54,78 @@ const Overview = ({ setIsOpen }) => {
         overflow: 'hidden',
       }}
     >
-      {/* Image Background */}
-      <div style={{
-        position: 'absolute',
-        inset: 0,
-        backgroundImage: "url('/images/about/about.webp')",
-        backgroundPosition: 'center center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        opacity: 0.15,
-        pointerEvents: 'none',
-        zIndex: 0,
-      }} />
+      {/* Decorative Rotating Mandala Background */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes slowSpin {
+          from { transform: translate(-50%, -50%) rotate(0deg); }
+          to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        .overview-mandala {
+          position: absolute;
+          top: 50%; left: 50%;
+          width: 650px; height: 650px;
+          opacity: 0.15;
+          pointer-events: none;
+          z-index: 0;
+          animation: slowSpin 120s linear infinite;
+        }
+        @media (max-width: 768px) {
+          .overview-mandala { width: 400px; height: 400px; opacity: 0.1; }
+        }
+      `}} />
+      <div className="overview-mandala">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
+          <g stroke="#C9A96E" strokeWidth="1" fill="none">
+            <circle cx="100" cy="100" r="95" strokeDasharray="2 4" />
+            <circle cx="100" cy="100" r="85" strokeWidth="1.5" />
+            <circle cx="100" cy="100" r="75" strokeWidth="0.5" />
+            
+            {/* Outer Petals */}
+            {Array.from({ length: 12 }).map((_, i) => (
+              <path key={`outer-${i}`} d="M100 15 C 120 40, 115 75, 100 100 C 85 75, 80 40, 100 15 Z" transform={`rotate(${i * 30} 100 100)`} fill="rgba(201,169,110,0.05)" />
+            ))}
+
+            {/* Inner Petals */}
+            {Array.from({ length: 8 }).map((_, i) => (
+              <path key={`inner-${i}`} d="M100 35 C 112 55, 110 80, 100 100 C 88 80, 86 55, 100 35 Z" transform={`rotate(${i * 45} 100 100)`} fill="rgba(30,109,122,0.15)" stroke="#1E6D7A" strokeWidth="1.5" />
+            ))}
+
+            {/* Core */}
+            <circle cx="100" cy="100" r="18" fill="rgba(201,169,110,0.15)" />
+            <circle cx="100" cy="100" r="10" strokeDasharray="1 2" />
+            <circle cx="100" cy="100" r="3" fill="#1E6D7A" stroke="none" />
+          </g>
+        </svg>
+      </div>
       <div className="container mx-auto px-4 sm:px-8 max-w-[1200px]" style={{ position: 'relative', zIndex: 1 }}>
-        <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-          <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'16px',margin:'0 0 16px',letterSpacing:'0.08em'}}>॥ श्री राधे राधे ॥</p>
+        {/* ── Desktop Only Top Header ── */}
+        <div className="hidden lg:block" style={{ textAlign: 'center', marginBottom: '24px' }}>
+          <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'16px',margin:'0 0 16px',letterSpacing:'0.08em'}}><DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /> ॥ श्री राधे राधे ॥ <DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /></p>
           <div className="ornament"><span className="feather">❋</span></div>
         </div>
       
-      {/* ── Mobile Section Heading ── */}
-      <div className="block lg:hidden" style={{ marginBottom: '32px', textAlign: 'center' }}>
-        <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'15px',margin:'0 0 12px',letterSpacing:'0.06em'}}>॥ श्री वृन्दावन धाम ॥</p>
+      {/* ── Mobile Unified Section Heading ── */}
+      <div className="block lg:hidden" style={{ marginBottom: '24px', textAlign: 'center' }}>
+        <div className="flex justify-between items-center w-full max-w-[350px] mx-auto px-1 devanagari" style={{color:'var(--gold-warm)',fontSize:'13px',letterSpacing:'0.03em'}}>
+           <span className="flex items-center"><DiyaIcon size={16} style={{ marginRight: "4px" }} /> ॥ श्री राधे राधे ॥</span>
+           <span className="flex items-center">॥ श्री वृन्दावन धाम ॥ <DiyaIcon size={16} style={{ marginLeft: "4px" }} /></span>
+        </div>
+        <div className="ornament" style={{ marginTop: '2px', marginBottom: '16px' }}><span className="feather">❋</span></div>
+        
         <h2 data-aos="flip-right" data-aos-delay="500" style={{
           fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
           color: '#1E6D7A', letterSpacing: '0.1em',
           textTransform: 'capitalize', margin: '0 0 10px 0',
           display: 'block'
         }}>
-          <span className="heading-stick" style={{ color: '#1E6D7A', fontWeight: '800', marginRight: '10px' }}>||</span>
-              <span style={{ color: 'var(--red, #ed1c24)' }}>Welcome to</span>&nbsp;Hero Homes Plots in Vrindavan
-              <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '10px' }}>||</span>
+          <span className="heading-stick" style={{ color: '#1E6D7A', fontWeight: '800', marginRight: '8px' }}>||</span>
+              <span style={{ color: 'var(--red, #ed1c24)' }}>Welcome to</span><br/>Hero Homes Plots in Vrindavan
+              <span className="heading-stick" style={{ color: 'var(--red, #ed1c24)', fontWeight: '800', marginLeft: '8px' }}>||</span>
         </h2>
         <h3 style={{
           fontFamily: F_JOST, fontWeight: '500', fontSize: '14px',
           color: '#C9A96E', letterSpacing: '0.05em',
-          textTransform: 'capitalize', margin: '0 0 14px 0',
+          textTransform: 'capitalize', margin: '0 0 10px 0',
         }}>
           NH-44, Vrindavan, Mathura
         </h3>
@@ -101,7 +138,7 @@ const Overview = ({ setIsOpen }) => {
           
           {/* ── Desktop Section Heading ── */}
           <div className="hidden lg:block" style={{ marginBottom: '40px', textAlign: 'left' }}>
-            <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'15px',margin:'0 0 12px',letterSpacing:'0.06em'}}>॥ श्री वृन्दावन धाम ॥</p>
+            <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'15px',margin:'0 0 12px',letterSpacing:'0.06em'}}><DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /> ॥ श्री वृन्दावन धाम ॥ <DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /></p>
             <h2 data-aos="flip-right" data-aos-delay="500" style={{
               fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
               color: '#1E6D7A', letterSpacing: '0.1em',
@@ -122,7 +159,7 @@ const Overview = ({ setIsOpen }) => {
           
           {/* Paragraphs */}
           <div data-aos="flip-down" data-aos-delay="500" style={{
-            fontFamily: F_SANS, fontSize: '14.5px', color: '#4A4540',
+            fontFamily: F_SANS, fontSize: '14.5px', color: '#222222',
             lineHeight: 1.9,
             marginTop: 0, marginBottom: '24px',
             textAlign: 'justify',

@@ -1,4 +1,5 @@
 import React from 'react';
+import { DiyaIcon } from '../ThemeIcons';
 
 export default function Philosophy({ setIsOpen }) {
   return (
@@ -6,7 +7,7 @@ export default function Philosophy({ setIsOpen }) {
       <section className="section-pad" style={{'background': 'var(--ivory)'}}>
   <div className="container grid-2">
     <div>
-      <p className="devanagari" style={{'color': 'var(--gold-warm)', 'fontSize': '15px', 'margin': '0 0 12px'}}>॥ श्री राधे ॥</p>
+      <p className="devanagari" style={{'color': 'var(--gold-warm)', 'fontSize': '15px', 'margin': '0 0 12px'}}><DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /> ॥ श्री राधे ॥ <DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /></p>
       <p className="eyebrow" style={{'color': 'var(--red)'}}>The Philosophy</p>
       <h2 className="h-display">A canvas, <em style={{'color': 'var(--red)'}}>yours to design</em>.<br/>A land, <em style={{'color': 'var(--peacock)', 'fontStyle': 'italic'}}>divinely blessed</em>.</h2>
       <div style={{'width': '50px', 'height': '2px', 'background': 'var(--red)', 'marginBottom': '32px'}}></div>

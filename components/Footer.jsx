@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import { PeacockFeatherIcon, FluteIcon } from './ThemeIcons';
+import { PeacockFeatherIcon, FluteIcon, DiyaIcon } from './ThemeIcons';
 
 
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
@@ -11,7 +11,7 @@ const Footer = () => (
   <footer style={{ background: '#000000', color: '#fff' }}>
 
     <div style={{ maxWidth: '860px', margin: '0 auto', padding: '56px 24px 32px', textAlign: 'center' }}>
-      <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'16px',margin:'0 0 16px',letterSpacing:'0.08em'}}>॥ हरे कृष्ण हरे कृष्ण ॥</p>
+      <p className="devanagari" style={{color:'var(--gold-warm)',fontSize:'16px',margin:'0 0 16px',letterSpacing:'0.08em'}}><DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /> ॥ हरे कृष्ण हरे कृष्ण ॥ <DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /></p>
       <h2 style={{ fontSize: '24px', fontWeight: '800', fontFamily: F_JOST, marginBottom: '6px', textTransform: 'capitalize', letterSpacing: '0.05em' }} data-aos="fade-in">
         <span className="heading-stick" style={{ color: '#1E6D7A', fontWeight: '800', marginRight: '10px' }}>||</span>
         <span style={{ color: 'var(--red, #ed1c24)' }}>About</span>&nbsp;Developer

@@ -1,4 +1,5 @@
 import React from 'react';
+import { DiyaIcon } from '../ThemeIcons';
 
 export default function Footer({ setIsOpen }) {
   return (
@@ -6,7 +7,7 @@ export default function Footer({ setIsOpen }) {
       <footer style={{'background': '#ffffff', 'color': 'var(--ink-mute)', 'padding': '70px 24px 30px', 'textAlign': 'center', 'borderTop': '1px solid var(--rule)'}}>
   <div style={{'maxWidth': '900px', 'margin': '0 auto'}}>
     <img decoding="async" src="assets/08a746243f.png" alt="Hero Homes" style={{'height': '50px', 'margin': '0 auto 28px'}} />
-    <p className="devanagari" style={{'color': 'var(--gold-warm)', 'fontSize': '16px', 'margin': '0 0 14px', 'letterSpacing': '0.08em'}}>॥ श्री वृन्दावन धाम ॥</p>
+    <p className="devanagari" style={{'color': 'var(--gold-warm)', 'fontSize': '16px', 'margin': '0 0 14px', 'letterSpacing': '0.08em'}}><DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /> ॥ श्री वृन्दावन धाम ॥ <DiyaIcon size={20} style={{ transform: "translateY(-3px)", display: "inline-block", margin: "0 10px" }} /></p>
     <p style={{'fontFamily': "'Cormorant Garamond',serif", 'fontSize': '22px', 'fontStyle': 'italic', 'color': 'var(--red)', 'margin': '0 0 24px'}}>Hero Homes Plots Vrindavan</p>
     <p style={{'margin': '0 0 26px', 'fontSize': '13px', 'letterSpacing': '2px', 'color': 'var(--ink-soft)'}}>Vrindavan · Mathura · Uttar Pradesh</p>
     <div style={{'height': '1px', 'background': 'var(--rule)', 'margin': '30px 0'}}></div>
