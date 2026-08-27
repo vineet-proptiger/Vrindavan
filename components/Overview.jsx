@@ -40,7 +40,7 @@ const Overview = ({ setIsOpen }) => {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: `
-        .overview-section { padding: 32px 0 48px; margin-top: -60px; position: relative; z-index: 10; }
+        .overview-section { padding: 12px 0 48px; margin-top: -120px; position: relative; z-index: 10; }
         @media (min-width: 768px) { .overview-section { padding: 72px 0 80px; margin-top: 0; } }
       `}} />
       <section
@@ -107,17 +107,17 @@ const Overview = ({ setIsOpen }) => {
         </div>
       
       {/* ── Mobile Unified Section Heading ── */}
-      <div className="block lg:hidden" style={{ marginBottom: '24px', textAlign: 'center' }}>
+      <div className="block lg:hidden" style={{ marginBottom: '16px', textAlign: 'center' }}>
         <div className="flex justify-between items-center w-full max-w-[350px] mx-auto px-1 devanagari" style={{color:'var(--gold-warm)',fontSize:'13px',letterSpacing:'0.03em'}}>
            <span className="flex items-center"><DiyaIcon size={16} style={{ marginRight: "4px" }} /> ॥ श्री राधे राधे ॥</span>
            <span className="flex items-center">॥ श्री वृन्दावन धाम ॥ <DiyaIcon size={16} style={{ marginLeft: "4px" }} /></span>
         </div>
-        <div className="ornament" style={{ marginTop: '2px', marginBottom: '16px' }}><span className="feather">❋</span></div>
+        <div className="ornament" style={{ marginTop: '-4px', marginBottom: '4px' }}><span className="feather">❋</span></div>
         
         <h2 data-aos="flip-right" data-aos-delay="500" style={{
           fontFamily: F_JOST, fontWeight: '700', fontSize: '17px',
           color: '#1E6D7A', letterSpacing: '0.1em',
-          textTransform: 'capitalize', margin: '0 0 10px 0',
+          textTransform: 'capitalize', margin: '0 0 4px 0',
           display: 'block'
         }}>
           <span className="heading-stick" style={{ color: '#1E6D7A', fontWeight: '800', marginRight: '8px' }}>||</span>
@@ -127,7 +127,7 @@ const Overview = ({ setIsOpen }) => {
         <h3 style={{
           fontFamily: F_JOST, fontWeight: '500', fontSize: '14px',
           color: '#C9A96E', letterSpacing: '0.05em',
-          textTransform: 'capitalize', margin: '0 0 10px 0',
+          textTransform: 'capitalize', margin: '0',
         }}>
           NH-44, Vrindavan, Mathura
         </h3>
