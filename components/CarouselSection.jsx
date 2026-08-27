@@ -125,8 +125,36 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", id = "h
           0% { width: 0%; }
           100% { width: 100%; }
         }
+        .carousel-progress-bar {
+          background: linear-gradient(90deg, #1E6D7A 0%, #C9A96E 50%, #78B833 100%);
+        }
       `}} />
-      <div className="container mx-auto px-4 md:px-8 max-w-[1200px]">
+
+      {/* Decorative Thematic Backgrounds */}
+      <div style={{
+        position: 'absolute',
+        top: '-5%', right: '-5%',
+        width: '400px', height: '400px',
+        opacity: 0.1,
+        pointerEvents: 'none',
+        zIndex: 0,
+        transform: 'rotate(15deg) scaleX(-1)'
+      }}>
+        <PeacockFeatherIcon size="100%" />
+      </div>
+      
+      <div style={{
+        position: 'absolute',
+        bottom: '10%', left: '5%',
+        opacity: 0.05,
+        pointerEvents: 'none',
+        zIndex: 0,
+        transform: 'rotate(-10deg)'
+      }}>
+        <FluteIcon width="300px" height="100px" />
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 max-w-[1200px]" style={{ position: 'relative', zIndex: 1 }}>
 
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <div className="ornament"><span className="feather">❋</span></div>
@@ -171,32 +199,46 @@ const CarouselSection = ({ setIsOpen, title = "Glimpses of Masterpiece", id = "h
                   className={`object-cover select-none pointer-events-none transition-transform duration-[6000ms] ease-out ${getRealIndex(idx) === getRealIndex(index) ? 'scale-110' : 'scale-100'}`}
                 />
                 
-                {/* Image Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-8 lg:p-10 pb-5 md:pb-10 flex flex-col justify-end"
+                {/* ── Soft Premium Glow (No more bulky borders) ── */}
+                <div 
+                  className="absolute inset-0 pointer-events-none z-10"
+                  style={{
+                    boxShadow: getRealIndex(idx) === getRealIndex(index) ? 'inset 0 0 0 1px rgba(201,169,110,0.5), inset 0 0 30px rgba(0,0,0,0.2)' : 'none',
+                    transition: 'all 1s ease-in-out',
+                  }}
+                />
+
+                {/* Image Overlay & Label */}
+                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-8 lg:p-10 pb-5 md:pb-10 flex flex-col justify-end z-20"
                      style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)', minHeight: '40%' }}>
                     <h3 
-                      className="text-white text-base md:text-2xl font-bold mb-1 tracking-wide" 
+                      className="text-white text-base md:text-2xl font-bold mb-1 tracking-wide drop-shadow-md" 
                       style={{ 
                         fontFamily: F_JOST,
                         opacity: getRealIndex(idx) === getRealIndex(index) ? 1 : 0,
                         transform: getRealIndex(idx) === getRealIndex(index) ? 'translateY(0)' : 'translateY(20px)',
-                        transition: 'all 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.3s'
+                        transition: 'all 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.3s',
+                        zIndex: 30
                       }}
                     >
                       {img.title}
                     </h3>
-                    
 
                     {/* Progress Bar Container */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 md:h-1.5 bg-white/20">
+                    <div className="absolute bottom-0 left-0 right-0 h-1 md:h-1.5 bg-white/20 z-30">
                       {getRealIndex(idx) === getRealIndex(index) && (
                         <div 
-                          className="h-full bg-white" 
+                          className="h-full carousel-progress-bar relative" 
                           style={{
                             width: '100%',
                             animation: 'progressLine 4s linear forwards'
                           }}
-                        />
+                        >
+                          {/* Sliding Peacock Feather Indicator */}
+                          <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-[80%] z-40" style={{ width: '28px', height: '28px' }}>
+                             <PeacockFeatherIcon size="28" style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.5))' }} />
+                          </div>
+                        </div>
                       )}
                     </div>
                 </div>

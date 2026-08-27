@@ -74,6 +74,13 @@ const Pricing = ({ setIsOpen }) => {
         }}
       />
 
+      <div
+        className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] pointer-events-none z-0"
+        style={{ opacity: 0.15, transform: 'rotate(20deg)' }}
+      >
+        <PeacockFeatherIcon size="100%" />
+      </div>
+
       <div className="max-w-6xl mx-auto relative z-10">
         {/* NEW HEADING STYLE */}
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
