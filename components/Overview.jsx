@@ -98,18 +98,7 @@ const Overview = ({ setIsOpen }) => {
         </svg>
       </div>
 
-      {/* Decorative Peacock Feather Background */}
-      <div style={{
-        position: 'absolute',
-        top: '-10%', left: '-5%',
-        width: '400px', height: '400px',
-        opacity: 0.15,
-        pointerEvents: 'none',
-        zIndex: 0,
-        transform: 'rotate(-30deg)'
-      }}>
-        <PeacockFeatherIcon size="100%" />
-      </div>
+
       <div className="container mx-auto px-4 sm:px-8 max-w-[1200px]" style={{ position: 'relative', zIndex: 1 }}>
         {/* ── Desktop Only Top Header ── */}
         <div className="hidden lg:block" style={{ textAlign: 'center', marginBottom: '24px' }}>
